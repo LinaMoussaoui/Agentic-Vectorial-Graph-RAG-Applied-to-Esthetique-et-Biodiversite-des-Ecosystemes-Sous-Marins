@@ -1,0 +1,42 @@
+apiVersion:apps/v1
+kind:Deployment
+metadata:
+  name:pfa-rag-frontend
+  labels:
+    app:pfa-rag-frontend
+spec:
+  replicas:1
+  selector:
+    matchLabels:
+      app:pfa-rag-frontend
+  template:
+    metadata:
+      labels:
+        app:pfa-rag-frontend
+    spec:
+      containers:
+      -name:frontend
+        image:khadijajouichat/pfa-rag-frontend:latest
+        imagePullPolicy:Always
+        ports:
+        -containerPort:80
+        resources:
+          limits:
+            cpu:"500m"
+            memory:512Mi
+          requests:
+            cpu:"250m"
+            memory:256Mi
+---
+apiVersion:v1
+kind:Service
+metadata:
+  name:pfa-rag-frontend-service
+spec:
+  type:NodePort
+  selector:
+    app:pfa-rag-frontend
+  ports:
+  -port:80
+    targetPort:80
+    nodePort:30088

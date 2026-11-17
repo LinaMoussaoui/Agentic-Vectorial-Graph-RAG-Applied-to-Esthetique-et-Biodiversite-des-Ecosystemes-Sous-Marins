@@ -1,0 +1,100 @@
+﻿pollution,DEGRADES,water_quality
+education_level,CORRELATES_WITH,ecological_knowledge
+citizen_science,SUPPORTS,ecological_monitoring
+functional_diversity,ENHANCES,ecosystem_stability
+adaptive_management,RESPONDS_TO,ecological_change
+shape,CAUSES,gender
+nature,ENHANCES,gender
+visual attribute,ENHANCES,gender
+elo score,CORRELATES_WITH,gender
+climate change,CONTRIBUTES_TO,gender
+age,PROTECTS,gender
+pollution,MODULATES,gender
+marine protected area,PROMOTES,gender
+evolutionary psychology,DRIVES,gender
+questionnaire,PREVENTS,gender
+savanna hypothesis,PREVENTS,gender
+social background,AFFECTS,gender
+neuroaesthetics,AFFECTS,gender
+biodiversity crisis,SUPPORTS,gender
+functional trait,IS_PART_OF,gender
+extinction,DETERMINES,gender
+pattern,DETERMINES,gender
+processing fluency,DEPENDS_ON,gender
+cinderella species,CAUSES,prospect-refuge theory
+biophilia,CAUSES,prospect-refuge theory
+functional dissimilarity,REDUCES,prospect-refuge theory
+age,INFLUENCES,prospect-refuge theory
+social background,INFLUENCES,prospect-refuge theory
+perception scale,DRIVES,prospect-refuge theory
+umbrella species,DRIVES,prospect-refuge theory
+taxonomic bias,DRIVES,prospect-refuge theory
+savanna hypothesis,DRIVES,prospect-refuge theory
+evolutionary psychology,LEADS_TO,prospect-refuge theory
+functional divergence,PROVIDES,prospect-refuge theory
+symmetry,PROVIDES,prospect-refuge theory
+elo score,PROVIDES,prospect-refuge theory
+visual complexity,PREVENTS,prospect-refuge theory
+charismatic species,AFFECTS,prospect-refuge theory
+gender,SUPPORTS,prospect-refuge theory
+processing fluency,SUPPORTS,prospect-refuge theory
+landscape preference,RELATES_TO,prospect-refuge theory
+diving experience,DEPENDS_ON,prospect-refuge theory
+functional richness,REGULATES,prospect-refuge theory
+education,REGULATES,prospect-refuge theory
+biophilia,INCREASES,landscape preference
+cinderella species,ENHANCES,landscape preference
+education,CORRELATES_WITH,landscape preference
+processing fluency,CORRELATES_WITH,landscape preference
+functional dissimilarity,DECREASES,landscape preference
+pattern,DECREASES,landscape preference
+functional richness,PROTECTS,landscape preference
+age,PROTECTS,landscape preference
+perception scale,INFLUENCES,landscape preference
+elo score,DRIVES,landscape preference
+charismatic species,PROVIDES,landscape preference
+visual complexity,PROVIDES,landscape preference
+diving experience,IS_PART_OF,landscape preference
+taxonomic bias,DETERMINES,landscape preference
+social background,DETERMINES,landscape preference
+evolutionary psychology,DETERMINES,landscape preference
+savanna hypothesis,DETERMINES,landscape preference
+gender,RELATES_TO,landscape preference
+functional divergence,RELATES_TO,landscape preference
+umbrella species,REGULATES,landscape preference
+elo score,INCREASES,food web
+landscape preference,REDUCES,food web
+functional dissimilarity,CORRELATES_WITH,food web
+functional divergence,CORRELATES_WITH,food web
+taxonomic bias,DECREASES,food web
+prospect-refuge theory,MODULATES,food web
+questionnaire,MODULATES,food web
+education,LEADS_TO,food web
+umbrella species,LEADS_TO,food web
+diving experience,PROVIDES,food web
+survival,PROVIDES,food web
+visual complexity,PROVIDES,food web
+cinderella species,PREVENTS,food web
+perception scale,PREVENTS,food web
+gender,AFFECTS,food web
+social background,AFFECTS,food web
+neuroaesthetics,SUPPORTS,food web
+charismatic species,RELATES_TO,food web
+functional richness,RELATES_TO,food web
+food web,CONTRIBUTES_TO,genetic diversity
+fragmentation,PREVENTS,genetic diversity
+elo score,REDUCES,diving experience
+gender,ENHANCES,diving experience
+neuroaesthetics,ENHANCES,diving experience
+functional trait,ENHANCES,diving experience
+pattern,ENHANCES,diving experience
+age,CONTRIBUTES_TO,diving experience
+color,CONTRIBUTES_TO,diving experience
+savanna hypothesis,DECREASES,diving experience
+social background,PROTECTS,diving experience
+education,INFLUENCES,diving experience
+processing fluency,PROMOTES,diving experience
+shape,LEADS_TO,diving experience
+questionnaire,PREVENTS,diving experience
+climate change,SUPPORTS,diving experience
+biophilia,RELATES_TO,diving experience

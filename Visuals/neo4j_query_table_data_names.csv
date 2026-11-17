@@ -1,0 +1,949 @@
+n.name,r,m.name
+diving experience,[:INFLUENCES],functional dissimilarity
+diving experience,[:DRIVES],food web
+diving experience,[:SUPPORTS],umbrella species
+diving experience,[:PROTECTS],cinderella species
+diving experience,[:PROTECTS],visual complexity
+diving experience,[:PROMOTES],landscape preference
+diving experience,[:INCREASES],survival
+diving experience,[:ENHANCES],taxonomic bias
+diving experience,[:DEPENDS_ON],prospect-refuge theory
+diving experience,[:RELATES_TO],charismatic species
+diving experience,[:CAUSES],perception scale
+diving experience,[:AFFECTS],functional divergence
+diving experience,[:DETERMINES],functional richness
+taxonomic bias,[:DRIVES],food web
+taxonomic bias,[:PROVIDES],landscape preference
+taxonomic bias,[:INCREASES],charismatic species
+taxonomic bias,[:DEPENDS_ON],functional richness
+taxonomic bias,[:DEPENDS_ON],survival
+taxonomic bias,[:REGULATES],umbrella species
+taxonomic bias,[:CAUSES],cinderella species
+taxonomic bias,[:PREVENTS],perception scale
+taxonomic bias,[:IS_PART_OF],functional dissimilarity
+taxonomic bias,[:AFFECTS],prospect-refuge theory
+taxonomic bias,[:AFFECTS],functional divergence
+taxonomic bias,[:LEADS_TO],visual complexity
+cinderella species,[:INFLUENCES],prospect-refuge theory
+cinderella species,[:CORRELATES_WITH],landscape preference
+cinderella species,[:CORRELATES_WITH],functional dissimilarity
+cinderella species,[:INCREASES],survival
+cinderella species,[:INCREASES],visual complexity
+cinderella species,[:MODULATES],fragmentation
+cinderella species,[:MODULATES],functional richness
+cinderella species,[:MODULATES],functional divergence
+cinderella species,[:DEPENDS_ON],perception scale
+cinderella species,[:REDUCES],food web
+landscape preference,[:INFLUENCES],fragmentation
+landscape preference,[:INCREASES],prospect-refuge theory
+landscape preference,[:AFFECTS],survival
+landscape preference,[:DETERMINES],food web
+fragmentation,[:INFLUENCES],adaptation
+fragmentation,[:SUPPORTS],genetic diversity
+fragmentation,[:MODULATES],evolution
+fragmentation,[:REGULATES],vulnerability
+fragmentation,[:REGULATES],endangered species
+prospect-refuge theory,[:INFLUENCES],survival
+prospect-refuge theory,[:SUPPORTS],fragmentation
+prospect-refuge theory,[:REGULATES],food web
+gender,[:INFLUENCES],prospect-refuge theory
+gender,[:DRIVES],diving experience
+gender,[:SUPPORTS],functional divergence
+gender,[:PROMOTES],visual complexity
+gender,[:CORRELATES_WITH],taxonomic bias
+gender,[:MODULATES],food web
+gender,[:MODULATES],charismatic species
+gender,[:ENHANCES],cinderella species
+gender,[:CAUSES],education
+gender,[:IS_PART_OF],landscape preference
+gender,[:AFFECTS],survival
+gender,[:AFFECTS],umbrella species
+gender,[:DETERMINES],functional dissimilarity
+gender,[:REDUCES],functional richness
+gender,[:DECREASES],perception scale
+functional richness,[:DRIVES],survival
+functional richness,[:PROTECTS],prospect-refuge theory
+functional richness,[:CORRELATES_WITH],food web
+functional richness,[:INCREASES],functional dissimilarity
+functional richness,[:DEPENDS_ON],functional divergence
+functional richness,[:REGULATES],visual complexity
+functional richness,[:RELATES_TO],fragmentation
+functional richness,[:PREVENTS],landscape preference
+functional richness,[:IS_PART_OF],perception scale
+age,[:INFLUENCES],prospect-refuge theory
+age,[:INFLUENCES],umbrella species
+age,[:DRIVES],gender
+age,[:SUPPORTS],charismatic species
+age,[:PROMOTES],survival
+age,[:CORRELATES_WITH],perception scale
+age,[:ENHANCES],landscape preference
+age,[:DEPENDS_ON],food web
+age,[:CAUSES],visual complexity
+age,[:PREVENTS],taxonomic bias
+age,[:PREVENTS],functional divergence
+age,[:CONTRIBUTES_TO],diving experience
+age,[:AFFECTS],functional dissimilarity
+age,[:LEADS_TO],cinderella species
+age,[:DETERMINES],education
+functional divergence,[:MODULATES],fragmentation
+functional divergence,[:RELATES_TO],landscape preference
+functional divergence,[:CONTRIBUTES_TO],visual complexity
+functional divergence,[:AFFECTS],functional dissimilarity
+functional divergence,[:LEADS_TO],food web
+functional divergence,[:DETERMINES],survival
+functional divergence,[:REDUCES],perception scale
+functional divergence,[:DECREASES],prospect-refuge theory
+functional dissimilarity,[:INFLUENCES],landscape preference
+functional dissimilarity,[:DRIVES],survival
+functional dissimilarity,[:INCREASES],visual complexity
+functional dissimilarity,[:DEPENDS_ON],food web
+functional dissimilarity,[:CAUSES],fragmentation
+functional dissimilarity,[:CAUSES],perception scale
+functional dissimilarity,[:PREVENTS],prospect-refuge theory
+survival,[:INCREASES],food web
+survival,[:CONTRIBUTES_TO],fragmentation
+charismatic_species,[:ATTRACTS],public_attention
+social background,[:INFLUENCES],cinderella species
+social background,[:INFLUENCES],umbrella species
+social background,[:DRIVES],functional divergence
+social background,[:DRIVES],functional dissimilarity
+social background,[:PROVIDES],food web
+social background,[:PROMOTES],taxonomic bias
+social background,[:MODULATES],gender
+social background,[:CAUSES],age
+social background,[:PREVENTS],prospect-refuge theory
+social background,[:PREVENTS],education
+social background,[:IS_PART_OF],landscape preference
+social background,[:LEADS_TO],survival
+social background,[:DETERMINES],diving experience
+social background,[:DECREASES],visual complexity
+social background,[:DECREASES],charismatic species
+food web,[:PROTECTS],genetic diversity
+food web,[:DETERMINES],fragmentation
+visual complexity,[:CORRELATES_WITH],fragmentation
+visual complexity,[:INCREASES],food web
+visual complexity,[:MODULATES],landscape preference
+visual complexity,[:ENHANCES],prospect-refuge theory
+visual complexity,[:CONTRIBUTES_TO],survival
+charismatic species,[:INFLUENCES],cinderella species
+charismatic species,[:PROTECTS],functional divergence
+charismatic species,[:PROMOTES],landscape preference
+charismatic species,[:PROMOTES],prospect-refuge theory
+charismatic species,[:PROMOTES],food web
+charismatic species,[:DEPENDS_ON],functional richness
+charismatic species,[:REGULATES],visual complexity
+charismatic species,[:PREVENTS],survival
+charismatic species,[:PREVENTS],perception scale
+charismatic species,[:LEADS_TO],umbrella species
+charismatic species,[:DETERMINES],functional dissimilarity
+education,[:INFLUENCES],functional divergence
+education,[:PROMOTES],survival
+education,[:MODULATES],landscape preference
+education,[:ENHANCES],functional dissimilarity
+education,[:DEPENDS_ON],umbrella species
+education,[:PREVENTS],diving experience
+education,[:PREVENTS],taxonomic bias
+education,[:PREVENTS],prospect-refuge theory
+education,[:PREVENTS],visual complexity
+education,[:CONTRIBUTES_TO],cinderella species
+education,[:CONTRIBUTES_TO],functional richness
+education,[:CONTRIBUTES_TO],perception scale
+education,[:LEADS_TO],food web
+education,[:DETERMINES],charismatic species
+umbrella species,[:SUPPORTS],prospect-refuge theory
+umbrella species,[:SUPPORTS],functional divergence
+umbrella species,[:PROVIDES],functional richness
+umbrella species,[:INCREASES],landscape preference
+umbrella species,[:MODULATES],perception scale
+umbrella species,[:IS_PART_OF],survival
+umbrella species,[:IS_PART_OF],visual complexity
+umbrella species,[:LEADS_TO],cinderella species
+umbrella species,[:LEADS_TO],fragmentation
+umbrella species,[:REDUCES],functional dissimilarity
+umbrella species,[:REDUCES],food web
+reef fish,[:SUPPORTS],species composition
+reef fish,[:PROVIDES],stakeholder
+reef fish,[:PROTECTS],climate change
+reef fish,[:PROMOTES],pollution
+reef fish,[:INCREASES],emotional connection
+reef fish,[:MODULATES],management
+reef fish,[:ENHANCES],motivation
+reef fish,[:PREVENTS],ecosystem service
+reef fish,[:IS_PART_OF],habitat
+reef fish,[:CONTRIBUTES_TO],regulating service
+reef fish,[:DETERMINES],functional trait
+reef fish,[:REDUCES],public support
+reef fish,[:REDUCES],ecological function
+reef fish,[:DECREASES],community ecology
+reef fish,[:DECREASES],sustainability
+pollution,[:SUPPORTS],functional trait
+pollution,[:SUPPORTS],savanna hypothesis
+pollution,[:PROVIDES],community ecology
+pollution,[:INCREASES],diving experience
+pollution,[:INCREASES],questionnaire
+pollution,[:INCREASES],processing fluency
+pollution,[:ENHANCES],charismatic species
+pollution,[:ENHANCES],elo score
+pollution,[:REGULATES],color
+pollution,[:CAUSES],visual attribute
+pollution,[:PREVENTS],taxonomic bias
+pollution,[:PREVENTS],biophilia
+pollution,[:IS_PART_OF],education
+pollution,[:DECREASES],species composition
+pollution,[:DEGRADES],water_quality
+ecosystem service,[:INFLUENCES],community ecology
+ecosystem service,[:DRIVES],shape
+ecosystem service,[:PROTECTS],species composition
+ecosystem service,[:PROMOTES],motivation
+ecosystem service,[:CORRELATES_WITH],stakeholder
+ecosystem service,[:INCREASES],pollution
+ecosystem service,[:INCREASES],sustainability
+ecosystem service,[:ENHANCES],extinction
+ecosystem service,[:CAUSES],visual attribute
+ecosystem service,[:CONTRIBUTES_TO],functional trait
+ecosystem service,[:CONTRIBUTES_TO],nature
+ecosystem service,[:AFFECTS],climate change
+ecosystem service,[:LEADS_TO],regulating service
+ecosystem service,[:DETERMINES],cultural service
+ecosystem service,[:REDUCES],symmetry
+perception scale,[:INFLUENCES],prospect-refuge theory
+perception scale,[:SUPPORTS],survival
+perception scale,[:PROVIDES],fragmentation
+perception scale,[:PROTECTS],food web
+perception scale,[:CORRELATES_WITH],visual complexity
+perception scale,[:CAUSES],landscape preference
+functional_trait,[:DETERMINES],ecological_role
+taxonomic_diversity,[:CORRELATES_WITH],aesthetic_preference
+genetic diversity,[:SUPPORTS],vulnerability
+genetic diversity,[:INCREASES],adaptation
+genetic diversity,[:CAUSES],endangered species
+genetic diversity,[:DECREASES],evolution
+visual_attribute,[:INFLUENCES],perception
+perception,[:DRIVES],motivation
+perception,[:PROTECTS],sustainability
+perception,[:PROTECTS],marine ecosystem
+perception,[:CORRELATES_WITH],environmental education
+perception,[:MODULATES],stakeholder
+perception,[:MODULATES],climate change
+perception,[:MODULATES],extinction
+perception,[:MODULATES],aesthetic_experience
+perception,[:DEPENDS_ON],marine protected area
+perception,[:DEPENDS_ON],ecological function
+perception,[:RELATES_TO],ecosystem service
+perception,[:PREVENTS],reef fish
+perception,[:PREVENTS],coralligenous
+perception,[:IS_PART_OF],management
+perception,[:CONTRIBUTES_TO],emotional connection
+stakeholder,[:DRIVES],species composition
+stakeholder,[:PROMOTES],pattern
+stakeholder,[:PROMOTES],shape
+stakeholder,[:PROMOTES],neuroaesthetics
+stakeholder,[:INCREASES],motivation
+stakeholder,[:MODULATES],marine protected area
+stakeholder,[:DEPENDS_ON],functional trait
+stakeholder,[:REGULATES],questionnaire
+stakeholder,[:CAUSES],elo score
+stakeholder,[:CAUSES],symmetry
+stakeholder,[:CAUSES],evolutionary psychology
+stakeholder,[:DETERMINES],biophilia
+stakeholder,[:DETERMINES],climate change
+stakeholder,[:DETERMINES],savanna hypothesis
+stakeholder,[:DECREASES],processing fluency
+elo score,[:PROTECTS],umbrella species
+elo score,[:PROMOTES],survival
+elo score,[:CORRELATES_WITH],education
+elo score,[:MODULATES],diving experience
+elo score,[:MODULATES],functional dissimilarity
+elo score,[:MODULATES],food web
+elo score,[:REGULATES],taxonomic bias
+elo score,[:RELATES_TO],age
+elo score,[:CAUSES],social background
+elo score,[:CAUSES],visual complexity
+elo score,[:PREVENTS],prospect-refuge theory
+elo score,[:IS_PART_OF],charismatic species
+elo score,[:IS_PART_OF],perception scale
+elo score,[:REDUCES],cinderella species
+elo score,[:DECREASES],landscape preference
+questionnaire,[:INFLUENCES],charismatic species
+questionnaire,[:PROTECTS],survival
+questionnaire,[:PROTECTS],elo score
+questionnaire,[:INCREASES],age
+questionnaire,[:ENHANCES],diving experience
+questionnaire,[:REGULATES],gender
+questionnaire,[:REGULATES],social background
+questionnaire,[:REGULATES],perception scale
+questionnaire,[:IS_PART_OF],functional dissimilarity
+questionnaire,[:IS_PART_OF],food web
+questionnaire,[:CONTRIBUTES_TO],education
+questionnaire,[:LEADS_TO],functional richness
+questionnaire,[:REDUCES],landscape preference
+questionnaire,[:REDUCES],prospect-refuge theory
+questionnaire,[:DECREASES],cinderella species
+functional trait,[:INFLUENCES],diving experience
+functional trait,[:DRIVES],questionnaire
+functional trait,[:DRIVES],visual attribute
+functional trait,[:SUPPORTS],symmetry
+functional trait,[:PROVIDES],social background
+functional trait,[:PROTECTS],biophilia
+functional trait,[:PROMOTES],neuroaesthetics
+functional trait,[:DEPENDS_ON],evolutionary psychology
+functional trait,[:REGULATES],functional richness
+functional trait,[:RELATES_TO],age
+functional trait,[:CAUSES],taxonomic bias
+functional trait,[:AFFECTS],savanna hypothesis
+functional trait,[:LEADS_TO],functional divergence
+functional trait,[:DETERMINES],cinderella species
+functional trait,[:REDUCES],charismatic species
+pattern,[:DRIVES],functional divergence
+pattern,[:DRIVES],evolutionary psychology
+pattern,[:PROVIDES],umbrella species
+pattern,[:CORRELATES_WITH],age
+pattern,[:CORRELATES_WITH],social background
+pattern,[:INCREASES],neuroaesthetics
+pattern,[:MODULATES],visual complexity
+pattern,[:DEPENDS_ON],elo score
+pattern,[:CAUSES],perception scale
+pattern,[:IS_PART_OF],landscape preference
+pattern,[:CONTRIBUTES_TO],diving experience
+pattern,[:CONTRIBUTES_TO],education
+pattern,[:DETERMINES],charismatic species
+pattern,[:REDUCES],gender
+pattern,[:REDUCES],processing fluency
+endangered_species,[:REQUIRES],protection_measures
+marine protected area,[:INFLUENCES],diving experience
+marine protected area,[:INFLUENCES],age
+marine protected area,[:INFLUENCES],shape
+marine protected area,[:DRIVES],gender
+marine protected area,[:DRIVES],neuroaesthetics
+marine protected area,[:PROVIDES],cinderella species
+marine protected area,[:ENHANCES],savanna hypothesis
+marine protected area,[:PREVENTS],species composition
+marine protected area,[:IS_PART_OF],functional trait
+marine protected area,[:CONTRIBUTES_TO],social background
+marine protected area,[:AFFECTS],education
+marine protected area,[:REDUCES],evolutionary psychology
+marine protected area,[:DECREASES],biophilia
+marine protected area,[:DECREASES],color
+marine protected area,[:DECREASES],community ecology
+emotional connection,[:INFLUENCES],climate change
+emotional connection,[:PROVIDES],symmetry
+emotional connection,[:PROMOTES],pollution
+emotional connection,[:PROMOTES],elo score
+emotional connection,[:PROMOTES],pattern
+emotional connection,[:DEPENDS_ON],marine protected area
+emotional connection,[:DEPENDS_ON],evolutionary psychology
+emotional connection,[:RELATES_TO],functional trait
+emotional connection,[:CAUSES],age
+emotional connection,[:PREVENTS],biophilia
+emotional connection,[:PREVENTS],color
+emotional connection,[:AFFECTS],species composition
+emotional connection,[:AFFECTS],neuroaesthetics
+emotional connection,[:LEADS_TO],community ecology
+emotional connection,[:REDUCES],extinction
+biophilia,[:INFLUENCES],umbrella species
+biophilia,[:INFLUENCES],savanna hypothesis
+biophilia,[:DRIVES],prospect-refuge theory
+biophilia,[:DRIVES],functional richness
+biophilia,[:PROVIDES],taxonomic bias
+biophilia,[:PROMOTES],questionnaire
+biophilia,[:CORRELATES_WITH],cinderella species
+biophilia,[:CORRELATES_WITH],social background
+biophilia,[:DEPENDS_ON],visual complexity
+biophilia,[:CONTRIBUTES_TO],functional divergence
+biophilia,[:LEADS_TO],charismatic species
+biophilia,[:DETERMINES],gender
+biophilia,[:REDUCES],perception scale
+biophilia,[:DECREASES],elo score
+biophilia,[:EXPLAINS],human_nature_connection
+nature,[:DRIVES],community ecology
+nature,[:PROVIDES],pattern
+nature,[:PROVIDES],extinction
+nature,[:PROVIDES],symmetry
+nature,[:PROTECTS],gender
+nature,[:DEPENDS_ON],species composition
+nature,[:RELATES_TO],social background
+nature,[:CAUSES],evolutionary psychology
+nature,[:CAUSES],color
+nature,[:IS_PART_OF],elo score
+nature,[:IS_PART_OF],marine protected area
+nature,[:LEADS_TO],questionnaire
+nature,[:LEADS_TO],shape
+nature,[:DETERMINES],pollution
+nature,[:REDUCES],neuroaesthetics
+species composition,[:DRIVES],elo score
+species composition,[:SUPPORTS],neuroaesthetics
+species composition,[:PROMOTES],functional dissimilarity
+species composition,[:PROMOTES],functional trait
+species composition,[:PROMOTES],shape
+species composition,[:CORRELATES_WITH],functional divergence
+species composition,[:INCREASES],biophilia
+species composition,[:ENHANCES],diving experience
+species composition,[:REGULATES],cinderella species
+species composition,[:RELATES_TO],symmetry
+species composition,[:PREVENTS],umbrella species
+species composition,[:PREVENTS],savanna hypothesis
+species composition,[:CONTRIBUTES_TO],pattern
+species composition,[:AFFECTS],education
+species composition,[:DECREASES],charismatic species
+visual attribute,[:SUPPORTS],functional divergence
+visual attribute,[:SUPPORTS],savanna hypothesis
+visual attribute,[:PROVIDES],diving experience
+visual attribute,[:PROVIDES],elo score
+visual attribute,[:PROVIDES],evolutionary psychology
+visual attribute,[:PROTECTS],functional richness
+visual attribute,[:PROMOTES],gender
+visual attribute,[:PROMOTES],color
+visual attribute,[:CAUSES],neuroaesthetics
+visual attribute,[:PREVENTS],age
+visual attribute,[:PREVENTS],social background
+visual attribute,[:LEADS_TO],taxonomic bias
+visual attribute,[:DETERMINES],charismatic species
+visual attribute,[:DETERMINES],biophilia
+visual attribute,[:DECREASES],umbrella species
+education_level,[:CORRELATES_WITH],ecological_knowledge
+climate change,[:PROTECTS],diving experience
+climate change,[:PROMOTES],pattern
+climate change,[:PROMOTES],shape
+climate change,[:CORRELATES_WITH],marine protected area
+climate change,[:MODULATES],taxonomic bias
+climate change,[:MODULATES],questionnaire
+climate change,[:ENHANCES],community ecology
+climate change,[:RELATES_TO],social background
+climate change,[:IS_PART_OF],symmetry
+climate change,[:CONTRIBUTES_TO],elo score
+climate change,[:AFFECTS],gender
+climate change,[:LEADS_TO],species composition
+climate change,[:REDUCES],visual attribute
+climate change,[:REDUCES],processing fluency
+climate change,[:DECREASES],evolutionary psychology
+processing fluency,[:INFLUENCES],evolutionary psychology
+processing fluency,[:PROTECTS],age
+processing fluency,[:CORRELATES_WITH],prospect-refuge theory
+processing fluency,[:CORRELATES_WITH],questionnaire
+processing fluency,[:INCREASES],functional richness
+processing fluency,[:MODULATES],functional divergence
+processing fluency,[:MODULATES],social background
+processing fluency,[:ENHANCES],functional dissimilarity
+processing fluency,[:DEPENDS_ON],savanna hypothesis
+processing fluency,[:RELATES_TO],gender
+processing fluency,[:AFFECTS],perception scale
+processing fluency,[:LEADS_TO],landscape preference
+processing fluency,[:DETERMINES],elo score
+processing fluency,[:DECREASES],taxonomic bias
+processing fluency,[:DECREASES],cinderella species
+extinction,[:INFLUENCES],gender
+extinction,[:PROVIDES],education
+extinction,[:PROMOTES],social background
+extinction,[:CORRELATES_WITH],pattern
+extinction,[:INCREASES],evolutionary psychology
+extinction,[:DEPENDS_ON],visual attribute
+extinction,[:REGULATES],color
+extinction,[:REGULATES],savanna hypothesis
+extinction,[:RELATES_TO],marine protected area
+extinction,[:PREVENTS],processing fluency
+extinction,[:LEADS_TO],neuroaesthetics
+extinction,[:DETERMINES],questionnaire
+extinction,[:DETERMINES],climate change
+extinction,[:DETERMINES],shape
+extinction,[:DECREASES],diving experience
+shape,[:DRIVES],savanna hypothesis
+shape,[:SUPPORTS],symmetry
+shape,[:PROVIDES],umbrella species
+shape,[:PROTECTS],taxonomic bias
+shape,[:PROTECTS],cinderella species
+shape,[:CORRELATES_WITH],social background
+shape,[:MODULATES],functional divergence
+shape,[:ENHANCES],neuroaesthetics
+shape,[:DEPENDS_ON],gender
+shape,[:DEPENDS_ON],age
+shape,[:CONTRIBUTES_TO],education
+shape,[:AFFECTS],perception scale
+shape,[:DETERMINES],functional richness
+shape,[:DETERMINES],pattern
+shape,[:DECREASES],charismatic species
+functional diversity,[:DRIVES],perception
+functional diversity,[:PROTECTS],nature
+functional diversity,[:CORRELATES_WITH],marine ecosystem
+functional diversity,[:ENHANCES],emotional connection
+functional diversity,[:ENHANCES],well-being
+functional diversity,[:ENHANCES],habitat
+functional diversity,[:CAUSES],stakeholder
+functional diversity,[:IS_PART_OF],sustainability
+functional diversity,[:CONTRIBUTES_TO],reef fish
+functional diversity,[:LEADS_TO],climate change
+functional diversity,[:LEADS_TO],environmental education
+functional diversity,[:REDUCES],regulating service
+functional diversity,[:DECREASES],extinction
+functional diversity,[:DECREASES],beauty
+functional diversity,[:DECREASES],ecological function
+well-being,[:INFLUENCES],biodiversity crisis
+well-being,[:DRIVES],marine protected area
+well-being,[:DRIVES],visual attribute
+well-being,[:PROVIDES],climate change
+well-being,[:PROMOTES],pollution
+well-being,[:CORRELATES_WITH],pattern
+well-being,[:INCREASES],community ecology
+well-being,[:ENHANCES],nature
+well-being,[:ENHANCES],extinction
+well-being,[:ENHANCES],shape
+well-being,[:IS_PART_OF],savanna hypothesis
+well-being,[:AFFECTS],public support
+well-being,[:AFFECTS],motivation
+well-being,[:DETERMINES],sustainability
+well-being,[:DECREASES],functional trait
+elo_score,[:MEASURES],aesthetic_preference
+public support,[:DRIVES],pollution
+public support,[:SUPPORTS],elo score
+public support,[:SUPPORTS],extinction
+public support,[:PROTECTS],motivation
+public support,[:INCREASES],questionnaire
+public support,[:MODULATES],nature
+public support,[:MODULATES],color
+public support,[:ENHANCES],processing fluency
+public support,[:DEPENDS_ON],marine protected area
+public support,[:DEPENDS_ON],species composition
+public support,[:DEPENDS_ON],savanna hypothesis
+public support,[:RELATES_TO],functional trait
+public support,[:IS_PART_OF],pattern
+public support,[:CONTRIBUTES_TO],biophilia
+public support,[:DETERMINES],shape
+adaptive_management,[:RESPONDS_TO],ecological_change
+functional_diversity,[:ENHANCES],ecosystem_stability
+processing_fluency,[:EXPLAINS],aesthetic_preference
+symmetry,[:SUPPORTS],landscape preference
+symmetry,[:SUPPORTS],gender
+symmetry,[:INCREASES],age
+symmetry,[:INCREASES],perceived_beauty
+symmetry,[:MODULATES],neuroaesthetics
+symmetry,[:REGULATES],diving experience
+symmetry,[:CAUSES],functional divergence
+symmetry,[:CAUSES],functional dissimilarity
+symmetry,[:PREVENTS],savanna hypothesis
+symmetry,[:CONTRIBUTES_TO],umbrella species
+symmetry,[:AFFECTS],prospect-refuge theory
+symmetry,[:AFFECTS],functional richness
+symmetry,[:AFFECTS],evolutionary psychology
+symmetry,[:LEADS_TO],charismatic species
+symmetry,[:DECREASES],taxonomic bias
+adaptation,[:INFLUENCES],vulnerability
+adaptation,[:INCREASES],evolution
+adaptation,[:ENHANCES],endangered species
+natural_selection,[:SHAPES],evolution
+evolution,[:INFLUENCES],vulnerability
+evolution,[:INFLUENCES],endangered species
+beauty,[:INFLUENCES],well-being
+beauty,[:INFLUENCES],public support
+beauty,[:CORRELATES_WITH],emotional connection
+beauty,[:DEPENDS_ON],coralligenous
+beauty,[:REGULATES],stakeholder
+beauty,[:REGULATES],nature
+beauty,[:REGULATES],biodiversity crisis
+beauty,[:CAUSES],sustainability
+beauty,[:PREVENTS],landscape
+beauty,[:IS_PART_OF],climate change
+beauty,[:IS_PART_OF],environmental education
+beauty,[:AFFECTS],pollution
+beauty,[:AFFECTS],coral reef
+beauty,[:REDUCES],regulating service
+beauty,[:DECREASES],cultural service
+environmental education,[:INFLUENCES],extinction
+environmental education,[:DRIVES],visual attribute
+environmental education,[:PROVIDES],color
+environmental education,[:PROTECTS],shape
+environmental education,[:PROTECTS],community ecology
+environmental education,[:INCREASES],ecosystem service
+environmental education,[:INCREASES],biodiversity crisis
+environmental education,[:INCREASES],sustainability
+environmental education,[:MODULATES],motivation
+environmental education,[:DEPENDS_ON],nature
+environmental education,[:REGULATES],species composition
+environmental education,[:CAUSES],public support
+environmental education,[:PREVENTS],marine protected area
+environmental education,[:IS_PART_OF],management
+environmental education,[:DECREASES],well-being
+evolutionary psychology,[:INFLUENCES],neuroaesthetics
+evolutionary psychology,[:DRIVES],functional divergence
+evolutionary psychology,[:CORRELATES_WITH],diving experience
+evolutionary psychology,[:CORRELATES_WITH],perception scale
+evolutionary psychology,[:INCREASES],taxonomic bias
+evolutionary psychology,[:INCREASES],charismatic species
+evolutionary psychology,[:REGULATES],survival
+evolutionary psychology,[:REGULATES],education
+evolutionary psychology,[:REGULATES],questionnaire
+evolutionary psychology,[:RELATES_TO],functional dissimilarity
+evolutionary psychology,[:IS_PART_OF],gender
+evolutionary psychology,[:AFFECTS],landscape preference
+evolutionary psychology,[:DETERMINES],umbrella species
+evolutionary psychology,[:REDUCES],cinderella species
+evolutionary psychology,[:REDUCES],social background
+landscape,[:SUPPORTS],motivation
+landscape,[:PROVIDES],cultural_services
+landscape,[:PROTECTS],emotional connection
+landscape,[:CORRELATES_WITH],stakeholder
+landscape,[:CORRELATES_WITH],regulating service
+landscape,[:CORRELATES_WITH],coralligenous
+landscape,[:INCREASES],sustainability
+landscape,[:MODULATES],reef fish
+landscape,[:MODULATES],environmental education
+landscape,[:MODULATES],coral reef
+landscape,[:ENHANCES],nature
+landscape,[:RELATES_TO],cultural service
+landscape,[:RELATES_TO],habitat
+landscape,[:AFFECTS],ecological function
+landscape,[:DETERMINES],climate change
+neuroaesthetics,[:DRIVES],questionnaire
+neuroaesthetics,[:PROTECTS],age
+neuroaesthetics,[:CORRELATES_WITH],functional richness
+neuroaesthetics,[:REGULATES],prospect-refuge theory
+neuroaesthetics,[:CAUSES],social background
+neuroaesthetics,[:PREVENTS],visual complexity
+neuroaesthetics,[:IS_PART_OF],functional divergence
+neuroaesthetics,[:IS_PART_OF],survival
+neuroaesthetics,[:CONTRIBUTES_TO],landscape preference
+neuroaesthetics,[:CONTRIBUTES_TO],gender
+neuroaesthetics,[:CONTRIBUTES_TO],elo score
+neuroaesthetics,[:REDUCES],functional dissimilarity
+neuroaesthetics,[:REDUCES],education
+neuroaesthetics,[:DECREASES],diving experience
+neuroaesthetics,[:DECREASES],charismatic species
+cultural service,[:DRIVES],functional trait
+cultural service,[:PROTECTS],stakeholder
+cultural service,[:CORRELATES_WITH],emotional connection
+cultural service,[:CORRELATES_WITH],regulating service
+cultural service,[:INCREASES],biodiversity crisis
+cultural service,[:ENHANCES],motivation
+cultural service,[:ENHANCES],sustainability
+cultural service,[:REGULATES],well-being
+cultural service,[:CAUSES],shape
+cultural service,[:PREVENTS],extinction
+cultural service,[:AFFECTS],climate change
+cultural service,[:AFFECTS],processing fluency
+cultural service,[:DECREASES],pollution
+cultural service,[:DECREASES],visual attribute
+cultural service,[:DECREASES],symmetry
+color,[:DRIVES],diving experience
+color,[:PROVIDES],gender
+color,[:PROTECTS],symmetry
+color,[:CORRELATES_WITH],elo score
+color,[:CORRELATES_WITH],processing fluency
+color,[:ENHANCES],charismatic species
+color,[:DEPENDS_ON],savanna hypothesis
+color,[:REGULATES],evolutionary psychology
+color,[:RELATES_TO],age
+color,[:RELATES_TO],questionnaire
+color,[:CAUSES],biophilia
+color,[:CAUSES],neuroaesthetics
+color,[:PREVENTS],cinderella species
+color,[:IS_PART_OF],pattern
+color,[:REDUCES],functional dissimilarity
+climate_change,[:THREATENS],coral_reef
+coral_reef,[:SUPPORTS],reef_fish_diversity
+ecological function,[:PROVIDES],environmental education
+ecological function,[:PROTECTS],ecosystem service
+ecological function,[:CORRELATES_WITH],pollution
+ecological function,[:ENHANCES],functional trait
+ecological function,[:ENHANCES],shape
+ecological function,[:ENHANCES],motivation
+ecological function,[:ENHANCES],sustainability
+ecological function,[:DEPENDS_ON],visual attribute
+ecological function,[:REGULATES],public support
+ecological function,[:RELATES_TO],stakeholder
+ecological function,[:CAUSES],regulating service
+ecological function,[:PREVENTS],biodiversity crisis
+ecological function,[:CONTRIBUTES_TO],emotional connection
+ecological function,[:DECREASES],climate change
+ecological function,[:DECREASES],well-being
+motivation,[:INFLUENCES],emotional connection
+motivation,[:DRIVES],biophilia
+motivation,[:PROVIDES],evolutionary psychology
+motivation,[:PROTECTS],symmetry
+motivation,[:PROMOTES],savanna hypothesis
+motivation,[:DEPENDS_ON],pollution
+motivation,[:RELATES_TO],marine protected area
+motivation,[:IS_PART_OF],visual attribute
+motivation,[:IS_PART_OF],color
+motivation,[:CONTRIBUTES_TO],extinction
+motivation,[:CONTRIBUTES_TO],neuroaesthetics
+motivation,[:CONTRIBUTES_TO],biodiversity crisis
+motivation,[:AFFECTS],shape
+motivation,[:LEADS_TO],elo score
+motivation,[:DECREASES],pattern
+savanna hypothesis,[:INFLUENCES],functional richness
+savanna hypothesis,[:DRIVES],visual complexity
+savanna hypothesis,[:SUPPORTS],social background
+savanna hypothesis,[:PROVIDES],perception scale
+savanna hypothesis,[:PROTECTS],umbrella species
+savanna hypothesis,[:CORRELATES_WITH],age
+savanna hypothesis,[:INCREASES],functional dissimilarity
+savanna hypothesis,[:MODULATES],questionnaire
+savanna hypothesis,[:ENHANCES],food web
+savanna hypothesis,[:CAUSES],diving experience
+savanna hypothesis,[:CAUSES],functional divergence
+savanna hypothesis,[:CONTRIBUTES_TO],prospect-refuge theory
+savanna hypothesis,[:LEADS_TO],gender
+savanna hypothesis,[:LEADS_TO],elo score
+savanna hypothesis,[:DETERMINES],neuroaesthetics
+community ecology,[:INFLUENCES],functional dissimilarity
+community ecology,[:PROTECTS],processing fluency
+community ecology,[:PROMOTES],taxonomic bias
+community ecology,[:DEPENDS_ON],color
+community ecology,[:REGULATES],gender
+community ecology,[:REGULATES],neuroaesthetics
+community ecology,[:CAUSES],biophilia
+community ecology,[:CONTRIBUTES_TO],umbrella species
+community ecology,[:CONTRIBUTES_TO],elo score
+community ecology,[:CONTRIBUTES_TO],symmetry
+community ecology,[:AFFECTS],functional richness
+community ecology,[:AFFECTS],social background
+community ecology,[:DETERMINES],pattern
+community ecology,[:REDUCES],cinderella species
+community ecology,[:DECREASES],visual attribute
+vulnerability,[:CORRELATES_WITH],endangered species
+habitat,[:DRIVES],cultural service
+habitat,[:PROVIDES],species composition
+habitat,[:PROVIDES],motivation
+habitat,[:PROVIDES],biodiversity crisis
+habitat,[:PROTECTS],environmental education
+habitat,[:PROMOTES],nature
+habitat,[:CORRELATES_WITH],regulating service
+habitat,[:INCREASES],emotional connection
+habitat,[:REGULATES],public support
+habitat,[:CAUSES],visual attribute
+habitat,[:CAUSES],well-being
+habitat,[:CONTRIBUTES_TO],functional trait
+habitat,[:DETERMINES],color
+habitat,[:REDUCES],sustainability
+habitat,[:DECREASES],management
+regulating service,[:DRIVES],nature
+regulating service,[:SUPPORTS],functional trait
+regulating service,[:SUPPORTS],public support
+regulating service,[:INCREASES],motivation
+regulating service,[:MODULATES],symmetry
+regulating service,[:DEPENDS_ON],pollution
+regulating service,[:REGULATES],management
+regulating service,[:RELATES_TO],community ecology
+regulating service,[:CAUSES],pattern
+regulating service,[:PREVENTS],color
+regulating service,[:IS_PART_OF],processing fluency
+regulating service,[:CONTRIBUTES_TO],climate change
+regulating service,[:LEADS_TO],stakeholder
+regulating service,[:LEADS_TO],marine protected area
+regulating service,[:LEADS_TO],extinction
+management,[:INFLUENCES],biodiversity crisis
+management,[:PROVIDES],questionnaire
+management,[:PROTECTS],pattern
+management,[:INCREASES],visual attribute
+management,[:MODULATES],extinction
+management,[:ENHANCES],functional trait
+management,[:DEPENDS_ON],symmetry
+management,[:REGULATES],public support
+management,[:REGULATES],evolutionary psychology
+management,[:RELATES_TO],marine protected area
+management,[:CAUSES],processing fluency
+management,[:LEADS_TO],biophilia
+management,[:REDUCES],pollution
+management,[:REDUCES],savanna hypothesis
+management,[:DECREASES],climate change
+coral reef,[:SUPPORTS],pollution
+coral reef,[:PROTECTS],cultural service
+coral reef,[:PROMOTES],marine protected area
+coral reef,[:CORRELATES_WITH],ecological function
+coral reef,[:INCREASES],reef fish
+coral reef,[:MODULATES],species composition
+coral reef,[:MODULATES],well-being
+coral reef,[:MODULATES],habitat
+coral reef,[:ENHANCES],public support
+coral reef,[:IS_PART_OF],community ecology
+coral reef,[:CONTRIBUTES_TO],motivation
+coral reef,[:AFFECTS],management
+coral reef,[:LEADS_TO],regulating service
+coral reef,[:DETERMINES],environmental education
+coral reef,[:DETERMINES],sustainability
+biodiversity crisis,[:INFLUENCES],age
+biodiversity crisis,[:INFLUENCES],savanna hypothesis
+biodiversity crisis,[:DRIVES],visual attribute
+biodiversity crisis,[:PROMOTES],symmetry
+biodiversity crisis,[:PROMOTES],evolutionary psychology
+biodiversity crisis,[:CORRELATES_WITH],pollution
+biodiversity crisis,[:MODULATES],pattern
+biodiversity crisis,[:ENHANCES],climate change
+biodiversity crisis,[:DEPENDS_ON],species composition
+biodiversity crisis,[:REGULATES],community ecology
+biodiversity crisis,[:RELATES_TO],shape
+biodiversity crisis,[:PREVENTS],questionnaire
+biodiversity crisis,[:IS_PART_OF],extinction
+biodiversity crisis,[:AFFECTS],processing fluency
+biodiversity crisis,[:LEADS_TO],functional trait
+species richness,[:INFLUENCES],habitat
+species richness,[:DRIVES],reef fish
+species richness,[:SUPPORTS],environmental education
+species richness,[:INCREASES],ecological function
+species richness,[:MODULATES],ecosystem service
+species richness,[:DEPENDS_ON],extinction
+species richness,[:CAUSES],management
+species richness,[:PREVENTS],perception
+species richness,[:IS_PART_OF],landscape
+species richness,[:IS_PART_OF],sustainability
+species richness,[:CONTRIBUTES_TO],stakeholder
+species richness,[:LEADS_TO],coral reef
+species richness,[:REDUCES],motivation
+species richness,[:DECREASES],climate change
+species richness,[:DECREASES],biodiversity crisis
+sustainability,[:DRIVES],climate change
+sustainability,[:DRIVES],color
+sustainability,[:DRIVES],biodiversity crisis
+sustainability,[:PROVIDES],symmetry
+sustainability,[:CORRELATES_WITH],processing fluency
+sustainability,[:INCREASES],public support
+sustainability,[:INCREASES],community ecology
+sustainability,[:MODULATES],motivation
+sustainability,[:ENHANCES],marine protected area
+sustainability,[:DEPENDS_ON],stakeholder
+sustainability,[:PREVENTS],shape
+sustainability,[:PREVENTS],management
+sustainability,[:IS_PART_OF],functional trait
+sustainability,[:AFFECTS],evolutionary psychology
+sustainability,[:AFFECTS],savanna hypothesis
+color_diversity,[:ENHANCES],visual_attractiveness
+marine ecosystem,[:INFLUENCES],coral reef
+marine ecosystem,[:DRIVES],extinction
+marine ecosystem,[:SUPPORTS],regulating service
+marine ecosystem,[:PROVIDES],ecological function
+marine ecosystem,[:PROTECTS],coralligenous
+marine ecosystem,[:PROMOTES],habitat
+marine ecosystem,[:REGULATES],reef fish
+marine ecosystem,[:RELATES_TO],cultural service
+marine ecosystem,[:CAUSES],marine protected area
+marine ecosystem,[:CAUSES],well-being
+marine ecosystem,[:AFFECTS],nature
+marine ecosystem,[:LEADS_TO],environmental education
+marine ecosystem,[:LEADS_TO],community ecology
+marine ecosystem,[:DETERMINES],motivation
+marine ecosystem,[:REDUCES],biodiversity crisis
+ecosystem,[:INFLUENCES],environmental education
+ecosystem,[:DRIVES],cultural service
+ecosystem,[:PROTECTS],functional diversity
+ecosystem,[:PROTECTS],motivation
+ecosystem,[:CORRELATES_WITH],coral reef
+ecosystem,[:MODULATES],perception
+ecosystem,[:REGULATES],beauty
+ecosystem,[:CAUSES],extinction
+ecosystem,[:PREVENTS],emotional connection
+ecosystem,[:PREVENTS],public support
+ecosystem,[:IS_PART_OF],biodiversity crisis
+ecosystem,[:IS_PART_OF],taxonomic diversity
+ecosystem,[:LEADS_TO],ecosystem service
+ecosystem,[:DECREASES],species richness
+ecosystem,[:DECREASES],marine ecosystem
+phylogenetic diversity,[:DRIVES],extinction
+phylogenetic diversity,[:SUPPORTS],coralligenous
+phylogenetic diversity,[:PROMOTES],sustainability
+phylogenetic diversity,[:CORRELATES_WITH],coral reef
+phylogenetic diversity,[:CORRELATES_WITH],biodiversity crisis
+phylogenetic diversity,[:CORRELATES_WITH],marine ecosystem
+phylogenetic diversity,[:INCREASES],nature
+phylogenetic diversity,[:INCREASES],beauty
+phylogenetic diversity,[:CAUSES],perception
+phylogenetic diversity,[:IS_PART_OF],public support
+phylogenetic diversity,[:IS_PART_OF],ecological function
+phylogenetic diversity,[:CONTRIBUTES_TO],emotional connection
+phylogenetic diversity,[:AFFECTS],management
+phylogenetic diversity,[:REDUCES],stakeholder
+phylogenetic diversity,[:DECREASES],species richness
+aesthetic value,[:INFLUENCES],stakeholder
+aesthetic value,[:INFLUENCES],functional diversity
+aesthetic value,[:SUPPORTS],motivation
+aesthetic value,[:PROVIDES],biodiversity crisis
+aesthetic value,[:PROTECTS],public support
+aesthetic value,[:PROTECTS],taxonomic diversity
+aesthetic value,[:INCREASES],well-being
+aesthetic value,[:INCREASES],coralligenous
+aesthetic value,[:MODULATES],phylogenetic diversity
+aesthetic value,[:REGULATES],cultural service
+aesthetic value,[:CAUSES],environmental education
+aesthetic value,[:PREVENTS],perception
+aesthetic value,[:IS_PART_OF],coral reef
+aesthetic value,[:AFFECTS],species richness
+aesthetic value,[:LEADS_TO],landscape
+habitat_suitability,[:DETERMINES],species_distribution
+species_richness,[:INCREASES],aesthetic_value
+aesthetic_value,[:DRIVES],conservation
+coralligenous,[:SUPPORTS],cultural service
+coralligenous,[:PROMOTES],habitat
+coralligenous,[:CORRELATES_WITH],visual attribute
+coralligenous,[:INCREASES],functional trait
+coralligenous,[:INCREASES],sustainability
+coralligenous,[:DEPENDS_ON],environmental education
+coralligenous,[:REGULATES],biodiversity crisis
+coralligenous,[:CAUSES],nature
+coralligenous,[:IS_PART_OF],stakeholder
+coralligenous,[:CONTRIBUTES_TO],climate change
+coralligenous,[:AFFECTS],pollution
+coralligenous,[:LEADS_TO],well-being
+coralligenous,[:LEADS_TO],motivation
+coralligenous,[:REDUCES],ecosystem service
+coralligenous,[:REDUCES],emotional connection
+habitat_complexity,[:PROMOTES],species_richness
+taxonomic diversity,[:INFLUENCES],environmental education
+taxonomic diversity,[:DRIVES],beauty
+taxonomic diversity,[:DRIVES],regulating service
+taxonomic diversity,[:PROTECTS],nature
+taxonomic diversity,[:CORRELATES_WITH],sustainability
+taxonomic diversity,[:INCREASES],ecological function
+taxonomic diversity,[:INCREASES],phylogenetic diversity
+taxonomic diversity,[:REGULATES],marine ecosystem
+taxonomic diversity,[:RELATES_TO],landscape
+taxonomic diversity,[:PREVENTS],climate change
+taxonomic diversity,[:CONTRIBUTES_TO],reef fish
+taxonomic diversity,[:CONTRIBUTES_TO],perception
+taxonomic diversity,[:CONTRIBUTES_TO],coral reef
+taxonomic diversity,[:AFFECTS],emotional connection
+taxonomic diversity,[:REDUCES],habitat
+conservation,[:DRIVES],extinction
+conservation,[:PROVIDES],ecosystem service
+conservation,[:PROMOTES],beauty
+conservation,[:PROMOTES],cultural service
+conservation,[:PROMOTES],phylogenetic diversity
+conservation,[:MODULATES],public support
+conservation,[:ENHANCES],coral reef
+conservation,[:REGULATES],stakeholder
+conservation,[:REGULATES],marine ecosystem
+conservation,[:CAUSES],emotional connection
+conservation,[:CAUSES],coralligenous
+conservation,[:AFFECTS],landscape
+conservation,[:DETERMINES],reef fish
+conservation,[:DETERMINES],habitat
+conservation,[:REDUCES],perception
+biodiversity,[:INFLUENCES],management
+biodiversity,[:INFLUENCES],marine ecosystem
+biodiversity,[:INFLUENCES],aesthetic_value
+biodiversity,[:DRIVES],beauty
+biodiversity,[:SUPPORTS],perception
+biodiversity,[:SUPPORTS],ecosystem_functioning
+biodiversity,[:PROVIDES],emotional connection
+biodiversity,[:PROTECTS],nature
+biodiversity,[:PROMOTES],habitat
+biodiversity,[:REGULATES],regulating service
+biodiversity,[:CAUSES],ecosystem
+biodiversity,[:CONTRIBUTES_TO],coral reef
+biodiversity,[:AFFECTS],conservation
+biodiversity,[:DETERMINES],stakeholder
+biodiversity,[:DETERMINES],taxonomic diversity
+ecological_function,[:DEPENDS_ON],functional_diversity
+prospect_refuge_theory,[:PREDICTS],landscape_preference
+invasive_species,[:OUTCOMPETES],native_species
+visual_complexity,[:HAS_OPTIMAL_LEVEL],aesthetic_value
+stakeholder_engagement,[:IMPROVES],management_outcomes
+connectivity,[:MAINTAINS],metapopulation_dynamics
+eradication,[:ELIMINATES],invasive_population
+marine_protected_area,[:PROTECTS],biodiversity
+overfishing,[:REDUCES],fish_population
+citizen_science,[:SUPPORTS],ecological_monitoring
+ecological_resilience,[:ENABLES],recovery_after_disturbance
+keystone_species,[:MAINTAINS],ecosystem_structure
+ecological_scaling,[:AFFECTS],perception
+gene_flow,[:PRESERVES],genetic_diversity
+restoration,[:IMPROVES],ecosystem_health
+indicator_species,[:REVEALS],environmental_health
+early_detection,[:ENABLES],rapid_response
+diving_experience,[:MODIFIES],aesthetic_judgment

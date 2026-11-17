@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Projet RAG – Frontend | Dr. EL MKHALET MOUNA</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:    #1e3a5f;
+    --teal:    #1a7f7a;
+    --gold:    #d4af37;
+    --coral:   #e76f51;
+    --sage:    #6b8e6b;
+    --violet:  #9b59b6;
+    --sky:     #3498db;
+    --bg:      #f0f4f8;
+    --panel:   #ffffff;
+    --border:  #d0dce8;
+    --text:    #1a2535;
+    --muted:   #6b7c93;
+    --success: #27ae60;
+    --danger:  #e74c3c;
+    --col1:    #e8f0fa;
+    --col2:    #e8f5f4;
+    --col3:    #fdf3e7;
+    --col4:    #f0eafa;
+    --col1b:   #1e3a5f;
+    --col2b:   #1a7f7a;
+    --col3b:   #c0392b;
+    --col4b:   #7d3c98;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Sora',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+  }
+
+  /* ── HEADER ── */
+  header{
+    background:linear-gradient(135deg,var(--navy) 0%,#2a4a7f 50%,var(--teal) 100%);
+    color:#fff;
+    text-align:center;
+    padding:18px 20px 14px;
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+    position:sticky;top:0;z-index:100;
+  }
+  header h1{font-size:1.55rem;font-weight:800;letter-spacing:.5px}
+  header h1 span{color:var(--gold)}
+  header p{font-size:.78rem;opacity:.8;margin-top:3px;font-family:'JetBrains Mono',monospace}
+
+  /* ── NAV TABS ── */
+  .nav-tabs{
+    display:flex;gap:0;
+    background:#fff;
+    border-bottom:2px solid var(--border);
+    padding:0 16px;
+    overflow-x:auto;
+  }
+  .nav-tab{
+    padding:10px 22px;
+    font-size:.82rem;font-weight:600;
+    cursor:pointer;border:none;background:none;
+    color:var(--muted);
+    border-bottom:3px solid transparent;
+    transition:.2s;white-space:nowrap;
+    font-family:'Sora',sans-serif;
+  }
+  .nav-tab:hover{color:var(--navy)}
+  .nav-tab.active{color:var(--navy);border-bottom-color:var(--navy)}
+  .nav-tab.t1.active{color:var(--col1b);border-bottom-color:var(--col1b)}
+  .nav-tab.t2.active{color:var(--col2b);border-bottom-color:var(--col2b)}
+  .nav-tab.t3.active{color:var(--col3b);border-bottom-color:var(--col3b)}
+  .nav-tab.t4.active{color:var(--col4b);border-bottom-color:var(--col4b)}
+
+  /* ── MAIN GRID ── */
+  .main-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    padding:12px 14px;
+    max-width:1700px;
+    margin:0 auto;
+  }
+
+  /* ── COLUMN CARDS ── */
+  .col-card{
+    background:var(--panel);
+    border-radius:10px;
+    border:1.5px solid var(--border);
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    box-shadow:0 2px 8px rgba(0,0,0,.07);
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+  .col-header{
+    padding:10px 14px 8px;
+    font-size:.82rem;font-weight:700;
+    letter-spacing:.3px;
+    border-bottom:1.5px solid var(--border);
+    display:flex;align-items:center;gap:8px;
+  }
+  .col-header .badge{
+    font-size:.68rem;background:var(--navy);color:#fff;
+    padding:2px 8px;border-radius:20px;font-weight:600;
+  }
+  .c1 .col-header{background:var(--col1);color:var(--col1b)}
+  .c2 .col-header{background:var(--col2);color:var(--col2b)}
+  .c3 .col-header{background:var(--col3);color:var(--col3b)}
+  .c4 .col-header{background:var(--col4);color:var(--col4b)}
+  .c1 .badge{background:var(--col1b)}
+  .c2 .badge{background:var(--col2b)}
+  .c3 .badge{background:var(--col3b)}
+  .c4 .badge{background:var(--col4b)}
+  .col-body{padding:12px;display:flex;flex-direction:column;gap:12px;flex:1}
+
+  /* ── SECTION BOXES ── */
+  .section-box{
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .section-title{
+    font-size:.72rem;font-weight:700;
+    padding:6px 10px;
+    background:#f7f9fc;
+    border-bottom:1px solid var(--border);
+    display:flex;align-items:center;gap:6px;
+    text-transform:uppercase;letter-spacing:.4px;
+  }
+  .section-body{padding:10px}
+
+  /* ── BUTTONS ── */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    padding:7px 14px;border-radius:6px;border:none;cursor:pointer;
+    font-size:.78rem;font-weight:600;font-family:'Sora',sans-serif;
+    transition:.18s;white-space:nowrap;
+  }
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn:active{transform:translateY(0)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-teal{background:var(--teal);color:#fff}
+  .btn-coral{background:var(--coral);color:#fff}
+  .btn-violet{background:var(--violet);color:#fff}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-sky{background:var(--sky);color:#fff}
+  .btn-sage{background:var(--sage);color:#fff}
+  .btn-sm{padding:4px 10px;font-size:.72rem}
+  .btn-full{width:100%}
+  .btn-outline{background:transparent;border:1.5px solid var(--navy);color:var(--navy)}
+
+  /* ── SELECT / INPUT ── */
+  select,input[type=text],input[type=number],textarea{
+    font-family:'Sora',sans-serif;
+    font-size:.78rem;
+    padding:6px 10px;
+    border:1.5px solid var(--border);
+    border-radius:6px;
+    background:#fff;
+    color:var(--text);
+    outline:none;
+    transition:.15s;
+  }
+  select:focus,input:focus,textarea:focus{border-color:var(--navy)}
+  textarea{resize:vertical;min-height:60px}
+
+  /* ── HIERARCHY VISUAL ── */
+  .hierarchy{text-align:center;padding:6px 0}
+  .hier-box{
+    display:inline-block;
+    background:var(--navy);color:#fff;
+    padding:4px 14px;border-radius:4px;
+    font-size:.7rem;font-weight:600;margin:2px;
+  }
+  .hier-box.chunk{background:var(--teal);font-size:.65rem;padding:3px 10px}
+  .hier-box.sub{background:var(--muted);font-size:.62rem;padding:2px 7px}
+  .hier-arrow{color:var(--muted);font-size:.8rem;display:block;text-align:center}
+
+  /* ── PCA CANVAS ── */
+  #pca-canvas{
+    width:100%;height:160px;
+    background:linear-gradient(135deg,#0d1b2e 0%,#1a2f4a 100%);
+    border-radius:6px;
+    display:block;
+    cursor:crosshair;
+  }
+
+  /* ── GRAPH CANVAS ── */
+  #graph-canvas{
+    width:100%;height:180px;
+    background:linear-gradient(135deg,#0d1b2e 0%,#1a3a5e 100%);
+    border-radius:6px;
+    display:block;
+  }
+
+  /* ── LOUVAIN CANVAS ── */
+  #louvain-canvas{
+    width:100%;height:140px;
+    background:#0d1b2e;
+    border-radius:6px;display:block;
+  }
+
+  /* ── REWARD CANVAS ── */
+  #reward-canvas{
+    width:100%;height:90px;
+    background:#fff;
+    border-radius:6px;
+    border:1px solid var(--border);
+    display:block;
+  }
+
+  /* ── RESULT ITEMS ── */
+  .result-item{
+    background:#f7f9fc;
+    border-left:3px solid var(--teal);
+    padding:6px 10px;
+    border-radius:0 4px 4px 0;
+    margin-bottom:6px;
+    font-size:.73rem;
+  }
+  .result-score{
+    float:right;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;color:var(--teal);font-size:.75rem;
+  }
+  .result-text{clear:both;color:var(--muted);margin-top:2px;line-height:1.4}
+
+  /* ── STATUS BADGE ── */
+  .status-ok{color:var(--success);font-weight:700;font-size:.75rem}
+  .status-err{color:var(--danger);font-weight:700;font-size:.75rem}
+  .status-warn{color:#e67e22;font-weight:700;font-size:.75rem}
+
+  /* ── METRIC ROW ── */
+  .metric-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:4px 0;border-bottom:1px dashed var(--border);
+    font-size:.73rem;
+  }
+  .metric-row:last-child{border:none}
+  .metric-val{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--navy)}
+
+  /* ── COMMUNITY CARD ── */
+  .comm-card{
+    display:flex;align-items:center;gap:8px;
+    background:#f7f9fc;border-radius:6px;
+    padding:5px 8px;margin-bottom:5px;
+    font-size:.72rem;
+  }
+  .comm-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+
+  /* ── PATH DIAGRAM ── */
+  .path-flow{
+    display:flex;align-items:center;gap:4px;
+    flex-wrap:wrap;padding:6px 0;
+  }
+  .path-node{
+    background:var(--navy);color:#fff;
+    padding:4px 10px;border-radius:20px;
+    font-size:.7rem;font-weight:600;
+  }
+  .path-arrow{color:var(--muted);font-size:1rem}
+  .path-node.graph{background:var(--coral)}
+  .path-node.vector{background:var(--teal)}
+  .path-node.query{background:var(--gold);color:#333}
+
+  /* ── Q-TABLE ── */
+  .q-table{width:100%;border-collapse:collapse;font-size:.7rem}
+  .q-table th{background:var(--navy);color:#fff;padding:4px 8px;text-align:left}
+  .q-table td{padding:4px 8px;border-bottom:1px solid var(--border)}
+  .q-table tr:nth-child(even){background:#f7f9fc}
+
+  /* ── QUERY INPUT ── */
+  .query-input-wrap{position:relative}
+  .query-input-wrap textarea{
+    width:100%;min-height:70px;
+    border:2px solid var(--border);
+    border-radius:8px;padding:8px 12px;
+    font-size:.82rem;
+    transition:.2s;
+  }
+  .query-input-wrap textarea:focus{border-color:var(--violet)}
+
+  /* ── ROUTING PREVIEW ── */
+  .routing-preview{
+    display:flex;gap:8px;margin-top:6px;
+  }
+  .route-box{
+    flex:1;padding:8px;border-radius:6px;
+    border:2px solid var(--border);
+    text-align:center;font-size:.72rem;font-weight:600;
+    transition:.3s;cursor:pointer;
+  }
+  .route-box.selected-graph{
+    border-color:var(--coral);background:#fdf3ef;color:var(--coral);
+  }
+  .route-box.selected-vec{
+    border-color:var(--teal);background:#e8f5f4;color:var(--teal);
+  }
+
+  /* ── HISTORY LIST ── */
+  .history-item{
+    padding:4px 8px;font-size:.72rem;
+    border-left:3px solid var(--violet);
+    background:#f7f9fc;
+    border-radius:0 4px 4px 0;
+    margin-bottom:4px;cursor:pointer;
+  }
+  .history-item:hover{background:#ede7f6}
+
+  /* ── CONFIDENCE BAR ── */
+  .conf-bar-wrap{
+    background:#e8edf3;border-radius:20px;height:8px;margin-top:4px;overflow:hidden;
+  }
+  .conf-bar{
+    height:100%;border-radius:20px;
+    background:linear-gradient(90deg,var(--teal),var(--sky));
+    transition:width .5s ease;
+  }
+
+  /* ── LOADING SPINNER ── */
+  .spinner{
+    display:inline-block;width:14px;height:14px;
+    border:2px solid rgba(255,255,255,.3);
+    border-top-color:#fff;
+    border-radius:50%;
+    animation:spin .6s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ── TOAST ── */
+  #toast{
+    position:fixed;bottom:20px;right:20px;
+    background:var(--navy);color:#fff;
+    padding:10px 18px;border-radius:8px;
+    font-size:.78rem;box-shadow:0 4px 16px rgba(0,0,0,.25);
+    transform:translateY(80px);opacity:0;
+    transition:.3s;z-index:999;
+  }
+  #toast.show{transform:translateY(0);opacity:1}
+
+  /* ── SUMMARY BOX ── */
+  .summary-box{
+    background:linear-gradient(135deg,#e8f0fa,#e8f5f4);
+    border:1px solid var(--teal);
+    border-radius:6px;padding:8px 10px;
+    font-size:.73rem;line-height:1.5;
+    color:var(--text);
+    min-height:40px;
+  }
+
+  /* ── FINAL ANSWER ── */
+  .final-answer{
+    background:linear-gradient(135deg,#fdf3e7,#fef9ee);
+    border:2px solid var(--gold);
+    border-radius:8px;padding:10px 12px;
+    font-size:.78rem;line-height:1.6;
+    font-weight:500;
+  }
+
+  /* ── ZOOM SLIDER ── */
+  input[type=range]{
+    width:100%;accent-color:var(--navy);height:4px;
+  }
+
+  /* ── CENTRALITY BARS ── */
+  .cent-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:.7rem}
+  .cent-label{width:110px;text-align:right;color:var(--muted)}
+  .cent-bar-wrap{flex:1;background:#e8edf3;border-radius:4px;height:8px}
+  .cent-bar{height:100%;border-radius:4px;background:var(--navy)}
+  .cent-val{width:36px;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--navy)}
+
+  /* ── NEO4J BADGE ── */
+  .neo-badge{
+    display:inline-flex;align-items:center;gap:5px;
+    background:#0d1b2e;color:#00c7b7;
+    font-size:.7rem;font-family:'JetBrains Mono',monospace;
+    padding:3px 10px;border-radius:20px;font-weight:600;
+  }
+  .neo-dot{width:7px;height:7px;background:#00c7b7;border-radius:50%;animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* ── SMALL TAG ── */
+  .tag{
+    display:inline-block;
+    background:#e8edf3;color:var(--muted);
+    font-size:.65rem;padding:1px 7px;border-radius:20px;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .tag.green{background:#e8f5e9;color:var(--success)}
+  .tag.orange{background:#fff3e0;color:#e67e22}
+  .tag.blue{background:#e3f2fd;color:var(--sky)}
+
+  /* ── CHUNK METHOD SELECT ── */
+  .method-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:4px;
+  }
+  .method-pill{
+    padding:4px 6px;border-radius:4px;border:1.5px solid var(--border);
+    font-size:.65rem;font-weight:600;cursor:pointer;text-align:center;
+    transition:.15px;background:#f7f9fc;
+  }
+  .method-pill:hover{border-color:var(--navy);background:var(--col1)}
+  .method-pill.selected{border-color:var(--navy);background:var(--navy);color:#fff}
+
+  /* responsive */
+  @media(max-width:1100px){
+    .main-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:680px){
+    .main-grid{grid-template-columns:1fr}
+    header h1{font-size:1.1rem}
+  }
+
+  /* Log panel */
+  .log-panel{
+    background:#0d1b2e;color:#00e5cc;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.68rem;border-radius:6px;
+    padding:8px 10px;min-height:50px;max-height:90px;
+    overflow-y:auto;line-height:1.6;
+  }
+  .log-panel .log-line{margin-bottom:1px}
+  .log-panel .log-ok{color:#27ae60}
+  .log-panel .log-err{color:#e74c3c}
+  .log-panel .log-info{color:#3498db}
+
+  /* node legend */
+  .legend{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+  .legend-item{display:flex;align-items:center;gap:4px;font-size:.65rem}
+  .legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+  /* cypher box */
+  .cypher-box{
+    background:#0d1b2e;color:#e0e0ff;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.68rem;padding:7px 10px;border-radius:6px;
+    line-height:1.6;
+  }
+  .cypher-key{color:#00c7b7}
+  .cypher-str{color:#f39c12}
+
+  /* Tabs inside column */
+  .inner-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:8px}
+  .inner-tab{
+    padding:5px 12px;font-size:.7rem;font-weight:600;
+    cursor:pointer;border:none;background:none;
+    color:var(--muted);border-bottom:2px solid transparent;
+    transition:.15s;font-family:'Sora',sans-serif;
+  }
+  .inner-tab.active{color:var(--navy);border-bottom-color:var(--navy)}
+  .inner-tab-content{display:none}
+  .inner-tab-content.active{display:block}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Projet <span>RAG</span> – Frontend &nbsp;|&nbsp; Agentic Vectorial Graph RAG System</h1>
+  <p>Dr. EL MKHALET MOUNA &nbsp;•&nbsp; JOUICHAT Khadija &amp; MOUSSAOUI Lina &nbsp;•&nbsp; 4IIR AI &amp; Data — Backend: <span id="api-status">Connecting…</span></p>
+</header>
+
+<!-- Global Nav -->
+<div class="nav-tabs">
+  <button class="nav-tab t1 active" onclick="showSection('all', this)">🏠 Overview</button>
+  <button class="nav-tab t1" onclick="showSection('vectorial', this)">📦 Vectorial RAG</button>
+  <button class="nav-tab t2" onclick="showSection('graph', this)">🔷 Graph RAG</button>
+  <button class="nav-tab t3" onclick="showSection('agentic', this)">🤖 Agentic RAG</button>
+  <button class="nav-tab t4" onclick="showSection('query', this)">🔍 Query</button>
+</div>
+
+<!-- ════════════════════ 4-COLUMN GRID ════════════════════ -->
+<div class="main-grid" id="main-grid">
+
+<!-- ╔══════════════════════════════════╗
+     ║  COLUMN 1 — VECTORIAL RAG        ║
+     ╚══════════════════════════════════╝ -->
+<div class="col-card c1">
+  <div class="col-header">
+    <span class="badge">1</span> Bouton Vectorial RAG
+  </div>
+  <div class="col-body">
+
+    <!-- CHUNKING -->
+    <div class="section-box">
+      <div class="section-title">📄 Chunking</div>
+      <div class="section-body">
+        <div class="hierarchy">
+          <div><span class="hier-box">📄 Full Document</span></div>
+          <div class="hier-arrow">↓</div>
+          <div>
+            <span class="hier-box chunk">Chunk 1</span>
+            <span class="hier-box chunk">Chunk 2</span>
+            <span class="hier-box chunk" id="chunk-count-badge">…</span>
+          </div>
+          <div class="hier-arrow">↓</div>
+          <div>
+            <span class="hier-box sub">Sub 1</span>
+            <span class="hier-box sub">Sub 2</span>
+            <span class="hier-box sub">Sub 3</span>
+            <span class="hier-box sub" id="sub-count-badge">…</span>
+          </div>
+        </div>
+        <div style="margin-top:8px">
+          <select id="chunk-method" style="width:100%;margin-bottom:6px">
+            <option value="">🔄 Auto-Select Best Method</option>
+            <option value="fixed_size">Fixed Size Splitting</option>
+            <option value="by_sentences">Sentence-based Splitting</option>
+            <option value="by_paragraphs">Paragraph-based Splitting</option>
+            <option value="semantic_similarity">Semantic Similarity</option>
+            <option value="sliding_window">Sliding Window</option>
+            <option value="recursive_pattern">⭐ Recursive Pattern (Recommended)</option>
+            <option value="character_based">Character-based</option>
+          </select>
+          <button class="btn btn-navy btn-full" id="btn-chunk" onclick="doChunking()">
+            🔪 Run Chunking
+          </button>
+        </div>
+        <div id="chunk-result" style="margin-top:8px;display:none">
+          <div class="metric-row"><span>Selected Method</span><span class="metric-val" id="chunk-method-name">—</span></div>
+          <div class="metric-row"><span>Total Chunks</span><span class="metric-val" id="chunk-total">—</span></div>
+          <div class="metric-row"><span>Sub-Chunks</span><span class="metric-val" id="sub-total">—</span></div>
+          <div class="metric-row"><span>Auto-Selected</span><span class="metric-val" id="chunk-auto">—</span></div>
+        </div>
+        <!-- Method comparison mini-table -->
+        <div id="chunk-comparison" style="margin-top:8px;display:none">
+          <div class="section-title" style="font-size:.66rem">📊 All Methods Comparison</div>
+          <div id="chunk-comparison-body" style="font-size:.68rem;margin-top:4px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMBEDDINGS FAISS -->
+    <div class="section-box">
+      <div class="section-title">🧠 Embeddings FAISS</div>
+      <div class="section-body">
+        <button class="btn btn-teal btn-full" id="btn-emb" onclick="doEmbeddings()" style="margin-bottom:8px">
+          ⚡ Create Embeddings + FAISS Index
+        </button>
+        <canvas id="pca-canvas"></canvas>
+        <div style="margin-top:6px;display:flex;gap:6px;align-items:center">
+          <span style="font-size:.68rem;color:var(--muted)">Proximity Filter:</span>
+          <input type="range" id="prox-slider" min="1" max="20" value="10" style="flex:1" oninput="updateProximityFilter(this.value)"/>
+          <span class="tag blue" id="prox-val">k=10</span>
+        </div>
+        <div id="emb-stats" style="margin-top:6px;display:none">
+          <div class="metric-row"><span>Model</span><span class="metric-val" style="font-size:.65rem">MiniLM-L3-v2</span></div>
+          <div class="metric-row"><span>Dimension</span><span class="metric-val" id="emb-dim">—</span></div>
+          <div class="metric-row"><span>FAISS Size</span><span class="metric-val" id="faiss-size">—</span></div>
+          <div class="metric-row"><span>Variance</span><span class="metric-val" id="pca-var">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETRIEVAL -->
+    <div class="section-box">
+      <div class="section-title">🔍 Retrieval Vectoriel</div>
+      <div class="section-body">
+        <select id="retrieval-method" style="width:100%;margin-bottom:6px">
+          <option value="">🔄 Auto-Best Method</option>
+          <option value="semantic">Top-k Semantic Search</option>
+          <option value="cosine">Cosine Similarity</option>
+          <option value="hybrid">Hybrid BM25 + Embeddings</option>
+          <option value="mmr">MMR Diversity Search</option>
+          <option value="contextual">Contextual Reranking</option>
+        </select>
+        <div style="display:flex;gap:6px;margin-bottom:6px">
+          <input type="text" id="retrieval-query" placeholder="Enter search query…" style="flex:1"/>
+          <input type="number" id="retrieval-k" value="5" min="1" max="20" style="width:50px"/>
+        </div>
+        <button class="btn btn-navy btn-full" onclick="doRetrieval()">🔎 Search</button>
+        <div id="retrieval-results" style="margin-top:8px"></div>
+        <div id="retrieved-summary" class="summary-box" style="margin-top:6px;display:none"></div>
+      </div>
+    </div>
+
+    <!-- LOG -->
+    <div class="log-panel" id="log-vec">
+      <div class="log-line log-info">» Vectorial RAG module ready. Run Chunking first.</div>
+    </div>
+  </div>
+</div>
+<!-- END COL 1 -->
+
+
+<!-- ╔══════════════════════════════════╗
+     ║  COLUMN 2 — GRAPH RAG            ║
+     ╚══════════════════════════════════╝ -->
+<div class="col-card c2">
+  <div class="col-header">
+    <span class="badge">2</span> Bouton Graph RAG
+  </div>
+  <div class="col-body">
+
+    <!-- GRAPH RAG AURA -->
+    <div class="section-box">
+      <div class="section-title">🌐 Graphe RAG Aura
+        <span id="neo-badge" class="neo-badge" style="margin-left:auto">
+          <span class="neo-dot"></span> Neo4j Aura
+        </span>
+      </div>
+      <div class="section-body">
+        <button class="btn btn-teal btn-full" id="btn-graph" onclick="doBuildGraph()" style="margin-bottom:8px">
+          🏗️ Build Knowledge Graph
+        </button>
+        <canvas id="graph-canvas"></canvas>
+        <div style="margin-top:6px;display:flex;gap:6px;align-items:center">
+          <span style="font-size:.68rem;color:var(--muted)">Zoom:</span>
+          <input type="range" id="graph-zoom" min="0.3" max="3" step="0.1" value="1" style="flex:1" oninput="zoomGraph(this.value)"/>
+          <button class="btn btn-sm btn-outline" onclick="fetchGraphData()">🔄 Refresh</button>
+        </div>
+        <div id="graph-stats" style="margin-top:6px;display:none">
+          <div class="metric-row"><span>Total Nodes</span><span class="metric-val" id="graph-nodes">—</span></div>
+          <div class="metric-row"><span>Relationships</span><span class="metric-val" id="graph-rels">—</span></div>
+          <div class="metric-row"><span>Triplets Pushed</span><span class="metric-val" id="graph-triplets">—</span></div>
+        </div>
+        <div class="legend" id="graph-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1e3a5f"></div><span style="font-size:.65rem">Concept</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#1a7f7a"></div><span style="font-size:.65rem">Relation</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#d4af37"></div><span style="font-size:.65rem">Community</span></div>
+        </div>
+        <div class="cypher-box" style="margin-top:8px">
+          <span class="cypher-key">MATCH</span> (a:Concept)-[r]-&gt;(b:Concept)<br/>
+          <span class="cypher-key">RETURN</span> a, r, b <span class="cypher-key">LIMIT</span> <span class="cypher-str">1000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMUNAUTÉS LOUVAIN -->
+    <div class="section-box">
+      <div class="section-title">🎯 Communautés – Louvain</div>
+      <div class="section-body">
+        <button class="btn btn-sage btn-full btn-sm" onclick="fetchCommunities()" style="margin-bottom:8px">
+          🔍 Detect Communities
+        </button>
+        <canvas id="louvain-canvas"></canvas>
+        <div id="louvain-stats" style="margin-top:6px">
+          <div class="metric-row"><span>☑️ Modularité</span><span class="metric-val" id="modularity-val">—</span></div>
+          <div class="metric-row"><span>Clusters</span><span class="metric-val" id="clusters-val">—</span></div>
+        </div>
+        <div id="community-list" style="margin-top:6px"></div>
+      </div>
+    </div>
+
+    <!-- ANALYSE GRAPHIQUE AVANCÉE -->
+    <div class="section-box">
+      <div class="section-title">📊 Analyse Graphique Avancée</div>
+      <div class="section-body">
+        <button class="btn btn-violet btn-full btn-sm" onclick="fetchAdvanced()" style="margin-bottom:8px">
+          🔬 Run Advanced Analysis
+        </button>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+          <div class="legend-dot" style="background:var(--navy);width:14px;height:14px;border-radius:3px"></div>
+          <span style="font-size:.72rem;font-weight:600">Centralité</span>
+        </div>
+        <div id="centrality-bars"></div>
+        <div style="display:flex;align-items:center;gap:6px;margin:6px 0 4px">
+          <div class="legend-dot" style="background:var(--teal);width:14px;height:14px;border-radius:3px"></div>
+          <span style="font-size:.72rem;font-weight:600">Chemins Sémantiques</span>
+        </div>
+        <div id="semantic-paths" style="font-size:.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace"></div>
+        <div style="display:flex;align-items:center;gap:6px;margin:6px 0 4px">
+          <div class="legend-dot" style="background:var(--coral);width:14px;height:14px;border-radius:3px"></div>
+          <span style="font-size:.72rem;font-weight:600">Fusion Graphe+Vectoriel</span>
+        </div>
+        <div id="fusion-info" style="font-size:.7rem"></div>
+      </div>
+    </div>
+
+    <div class="log-panel" id="log-graph">
+      <div class="log-line log-info">» Graph RAG module ready. Build graph first.</div>
+    </div>
+  </div>
+</div>
+<!-- END COL 2 -->
+
+
+<!-- ╔══════════════════════════════════╗
+     ║  COLUMN 3 — AGENTIC GRAPH RAG    ║
+     ╚══════════════════════════════════╝ -->
+<div class="col-card c3">
+  <div class="col-header">
+    <span class="badge">3</span> Bouton Agentic Graph RAG
+  </div>
+  <div class="col-body">
+
+    <!-- POLICY VISUALIZATION -->
+    <div class="section-box">
+      <div class="section-title">🧠 Policy Visualization</div>
+      <div class="section-body">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:6px 0">
+          <div style="text-align:center">
+            <div style="font-size:.65rem;color:var(--muted);margin-bottom:4px">Q-Learning Policy</div>
+            <div id="policy-states" style="display:flex;flex-direction:column;gap:4px">
+              <div class="path-node" style="font-size:.65rem">State: semantic_low</div>
+              <div class="path-node" style="font-size:.65rem;background:var(--muted)">State: semantic_high</div>
+              <div class="path-node" style="font-size:.65rem;background:var(--sage)">State: systematic_low</div>
+            </div>
+          </div>
+          <div style="font-size:1.4rem;color:var(--gold)">→</div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div class="path-node graph" style="font-size:.65rem">Graph Action</div>
+            <div class="path-node vector" style="font-size:.65rem">Vector Action</div>
+          </div>
+        </div>
+        <button class="btn btn-coral btn-full btn-sm" onclick="fetchPolicy()">
+          📊 Refresh Policy
+        </button>
+        <div id="policy-table-wrap" style="margin-top:6px;display:none">
+          <table class="q-table" id="policy-table">
+            <thead><tr><th>State</th><th>Best Action</th><th>Q-Graph</th><th>Q-Vec</th></tr></thead>
+            <tbody id="policy-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- REWARD MONITOR -->
+    <div class="section-box">
+      <div class="section-title">📈 Reward Monitor</div>
+      <div class="section-body">
+        <canvas id="reward-canvas"></canvas>
+        <div style="margin-top:4px;display:flex;justify-content:space-between">
+          <span style="font-size:.68rem;color:var(--muted)">Iterations: <span id="reward-iter" class="tag">0</span></span>
+          <span style="font-size:.68rem;color:var(--muted)">Last Reward: <span id="last-reward" class="tag green">—</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DECISION PATH -->
+    <div class="section-box">
+      <div class="section-title">🗺️ Decision Path</div>
+      <div class="section-body">
+        <div class="path-flow" id="decision-path">
+          <div class="path-node query">User Query</div>
+          <span class="path-arrow">→</span>
+          <div class="path-node">Semantic Analysis</div>
+          <span class="path-arrow">→</span>
+          <div class="path-node">Systematic Analysis</div>
+          <span class="path-arrow">→</span>
+          <div class="path-node vector">Vectorial RAG</div>
+        </div>
+        <div style="margin-top:4px">
+          <div class="metric-row"><span>Detected Type</span><span class="metric-val" id="path-type">—</span></div>
+          <div class="metric-row"><span>Complexity</span><span class="metric-val" id="path-complexity">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAPH QUERY EXECUTION -->
+    <div class="section-box">
+      <div class="section-title">🔗 Graph Query Execution</div>
+      <div class="section-body">
+        <div class="cypher-box" id="cypher-executed">
+          <span class="cypher-key">MATCH</span> (A) – [R] → (B)<br/>
+          <span style="color:#888">Waiting for query…</span>
+        </div>
+        <div id="neo4j-results" style="margin-top:6px;font-size:.68rem;display:none">
+          <div style="font-weight:600;margin-bottom:3px;color:var(--muted)">Explored Subgraphs:</div>
+          <div id="subgraph-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HYBRID FEEDBACK LOOP -->
+    <div class="section-box">
+      <div class="section-title">🔄 Hybrid Feedback Loop</div>
+      <div class="section-body">
+        <div style="display:flex;align-items:center;gap:10px;justify-content:center;padding:4px">
+          <div style="text-align:center;font-size:.68rem">
+            <div style="font-size:1.4rem">🤖</div>
+            <div>Agent</div>
+          </div>
+          <div style="font-size:.9rem;color:var(--gold)">→→→</div>
+          <div style="text-align:center;font-size:.68rem">
+            <div style="font-size:1.4rem">⚙️</div>
+            <div>Q-Table Update</div>
+          </div>
+          <div style="font-size:.9rem;color:var(--gold)">→→→</div>
+          <div style="text-align:center;font-size:.68rem">
+            <div style="font-size:1.4rem">📚</div>
+            <div>Learning</div>
+          </div>
+        </div>
+        <div class="metric-row" style="margin-top:4px"><span>Graph Result Reinjected</span><span class="metric-val tag" id="feedback-reinjected">—</span></div>
+        <div class="metric-row"><span>Last Reward</span><span class="metric-val" id="feedback-reward">—</span></div>
+        <div class="metric-row"><span>Total Iterations</span><span class="metric-val" id="feedback-iter">—</span></div>
+      </div>
+    </div>
+
+    <div class="log-panel" id="log-agent">
+      <div class="log-line log-info">» Agentic RAG module ready. Submit a query to activate.</div>
+    </div>
+  </div>
+</div>
+<!-- END COL 3 -->
+
+
+<!-- ╔══════════════════════════════════╗
+     ║  COLUMN 4 — QUERY               ║
+     ╚══════════════════════════════════╝ -->
+<div class="col-card c4">
+  <div class="col-header">
+    <span class="badge">4</span> Bouton Query
+  </div>
+  <div class="col-body">
+
+    <!-- INPUT -->
+    <div class="section-box">
+      <div class="section-title">💬 Champ de Saisie Principal</div>
+      <div class="section-body">
+        <div class="query-input-wrap">
+          <textarea id="query-input" placeholder="Entrez votre question… (Ex: What is the relationship between biodiversity and aesthetic value?)"></textarea>
+        </div>
+        <div style="display:flex;gap:6px;margin-top:6px">
+          <button class="btn btn-violet btn-full" id="btn-send" onclick="doQuery()">
+            ✉️ Envoyer / Exécuter
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="doReset()">🔄</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTO-ANALYSIS -->
+    <div class="section-box">
+      <div class="section-title">🔬 Analyse Automatique de la Requête</div>
+      <div class="section-body">
+        <div class="metric-row">
+          <span>Analyse</span>
+          <span class="metric-val">
+            <span class="tag blue" id="q-type">—</span>
+          </span>
+        </div>
+        <div class="metric-row">
+          <span>Routage</span>
+          <span class="metric-val" id="q-routing">—</span>
+        </div>
+        <div class="metric-row">
+          <span>Confiance</span>
+          <span class="metric-val" id="q-conf">—</span>
+        </div>
+        <div class="conf-bar-wrap">
+          <div class="conf-bar" id="conf-bar" style="width:0%"></div>
+        </div>
+        <div style="margin-top:8px">
+          <div style="font-size:.68rem;font-weight:600;margin-bottom:4px;color:var(--muted)">Prévisualisation du routage:</div>
+          <div class="routing-preview">
+            <div class="route-box" id="route-graph">
+              🔷 Graph RAG
+            </div>
+            <div class="route-box" id="route-vec">
+              🔶 Vectorial RAG
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL ANSWER -->
+    <div class="section-box">
+      <div class="section-title">💡 Final Answer Panel</div>
+      <div class="section-body">
+        <div class="final-answer" id="final-answer">
+          <span style="color:var(--muted);font-size:.72rem">Submit a query to generate an answer…</span>
+        </div>
+        <div style="margin-top:6px">
+          <div class="metric-row"><span>Provenance</span><span class="metric-val tag" id="ans-provenance" style="font-size:.62rem;max-width:140px;white-space:nowrap;overflow:hidden">—</span></div>
+          <div class="metric-row"><span>LLM Used</span><span class="metric-val tag blue">FLAN-T5</span></div>
+          <div class="metric-row"><span>Confidence</span><span class="metric-val" id="ans-confidence">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HISTORIQUE -->
+    <div class="section-box">
+      <div class="section-title">📜 Historique des Requêtes</div>
+      <div class="section-body">
+        <div id="query-history">
+          <div class="history-item" onclick="useHistory(this)">Quelles sont les tendances…?</div>
+          <div class="history-item" onclick="useHistory(this)">Comment fonctionne…?</div>
+          <div class="history-item" onclick="useHistory(this)">Quels sont les avantages…?</div>
+        </div>
+        <button class="btn btn-sm btn-outline btn-full" style="margin-top:6px" onclick="doReset()">
+          🗑️ Réinitialiser
+        </button>
+      </div>
+    </div>
+
+    <!-- POLICY PATH -->
+    <div class="section-box">
+      <div class="section-title">🛤️ Policy Path</div>
+      <div class="section-body">
+        <div id="policy-path" style="font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);min-height:30px">
+          Waiting for query…
+        </div>
+      </div>
+    </div>
+
+    <div class="log-panel" id="log-query">
+      <div class="log-line log-info">» Query module ready. Enter a question above.</div>
+    </div>
+  </div>
+</div>
+<!-- END COL 4 -->
+
+</div><!-- end main-grid -->
+
+<div id="toast">✅ Done</div>
+
+<!-- ════════════ JAVASCRIPT ════════════ -->
+<script>
+const API = "http://127.0.0.1:8000";
+
+// ─── Utilities ───────────────────────────────────────────
+function toast(msg, ok=true){
+  const t=document.getElementById('toast');
+  t.textContent=(ok?'✅ ':'❌ ')+msg;
+  t.className='show';
+  setTimeout(()=>t.className='',2500);
+}
+function log(panelId, msg, type='info'){
+  const p=document.getElementById(panelId);
+  const d=document.createElement('div');
+  d.className='log-line log-'+type;
+  d.textContent='» '+msg;
+  p.appendChild(d);
+  p.scrollTop=p.scrollHeight;
+}
+function setBtn(id, loading){
+  const b=document.getElementById(id);
+  if(!b)return;
+  b.disabled=loading;
+  if(loading) b.innerHTML='<span class="spinner"></span> Loading…';
+}
+
+// ─── API health check ────────────────────────────────────
+async function checkHealth(){
+  try{
+    const r=await fetch(API+'/');
+    if(r.ok){
+      const d=await r.json();
+      document.getElementById('api-status').textContent='🟢 Connected | '+d.version;
+      document.getElementById('api-status').style.color='#00e5cc';
+    }
+  }catch(e){
+    document.getElementById('api-status').textContent='🔴 Backend Offline (start uvicorn)';
+    document.getElementById('api-status').style.color='#e74c3c';
+  }
+}
+checkHealth();
+
+// ─── CHUNKING ─────────────────────────────────────────────
+async function doChunking(){
+  setBtn('btn-chunk',true);
+  log('log-vec','Running chunking process…');
+  try{
+    const method=document.getElementById('chunk-method').value;
+    const r=await fetch(API+'/chunking/process',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({method:method||null})
+    });
+    const d=await r.json();
+    document.getElementById('chunk-count-badge').textContent=`${d.total_chunks} chunks`;
+    document.getElementById('sub-count-badge').textContent=`${d.total_sub_chunks} sub`;
+    document.getElementById('chunk-method-name').textContent=d.selected_method_label||d.selected_method;
+    document.getElementById('chunk-total').textContent=d.total_chunks;
+    document.getElementById('sub-total').textContent=d.total_sub_chunks;
+    document.getElementById('chunk-auto').textContent=d.auto_selected?'✅ Yes':'No';
+    document.getElementById('chunk-result').style.display='block';
+    if(d.all_methods_comparison){
+      let html='<table style="width:100%;border-collapse:collapse;font-size:.62rem">';
+      html+='<tr style="background:var(--navy);color:#fff"><th style="padding:2px 4px">Method</th><th>Chunks</th><th>Avg Size</th></tr>';
+      for(const[k,v] of Object.entries(d.all_methods_comparison)){
+        html+=`<tr style="border-bottom:1px solid var(--border)"><td style="padding:2px 4px">${k}</td><td style="padding:2px 4px">${v.chunk_count}</td><td style="padding:2px 4px">${v.avg_size}</td></tr>`;
+      }
+      html+='</table>';
+      document.getElementById('chunk-comparison-body').innerHTML=html;
+      document.getElementById('chunk-comparison').style.display='block';
+    }
+    toast('Chunking done! '+d.total_chunks+' chunks');
+    log('log-vec',`Chunking complete: ${d.total_chunks} chunks, ${d.total_sub_chunks} sub-chunks`,'ok');
+  }catch(e){
+    toast('Chunking failed: '+e.message,false);
+    log('log-vec','Chunking error: '+e.message,'err');
+  }
+  setBtn('btn-chunk',false);
+  document.getElementById('btn-chunk').innerHTML='🔪 Run Chunking';
+}
+
+// ─── EMBEDDINGS ───────────────────────────────────────────
+let pcaData=null;
+async function doEmbeddings(){
+  setBtn('btn-emb',true);
+  log('log-vec','Creating embeddings + FAISS index…');
+  try{
+    const r=await fetch(API+'/embeddings/create',{method:'POST'});
+    const d=await r.json();
+    document.getElementById('emb-dim').textContent=d.embedding_dimension;
+    document.getElementById('faiss-size').textContent=d.faiss_index_size;
+    document.getElementById('emb-stats').style.display='block';
+    const pcaR=await fetch(API+'/embeddings/pca');
+    pcaData=await pcaR.json();
+    document.getElementById('pca-var').textContent=(pcaData.total_variance_explained*100).toFixed(1)+'%';
+    drawPCA(pcaData);
+    toast('Embeddings ready! Dim='+d.embedding_dimension);
+    log('log-vec',`Embeddings created. Dim=${d.embedding_dimension}, FAISS=${d.faiss_index_size}`,'ok');
+  }catch(e){
+    toast('Embeddings failed: '+e.message,false);
+    log('log-vec','Error: '+e.message,'err');
+  }
+  setBtn('btn-emb',false);
+  document.getElementById('btn-emb').innerHTML='⚡ Create Embeddings + FAISS Index';
+}
+
+function drawPCA(data){
+  const canvas=document.getElementById('pca-canvas');
+  const ctx=canvas.getContext('2d');
+  canvas.width=canvas.offsetWidth||320;
+  canvas.height=160;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  if(!data||!data.points||!data.points.length)return;
+  const pts=data.points;
+  const xs=pts.map(p=>p.x), ys=pts.map(p=>p.y);
+  const xMin=Math.min(...xs),xMax=Math.max(...xs);
+  const yMin=Math.min(...ys),yMax=Math.max(...ys);
+  const pad=20;
+  function tx(x){return pad+(x-xMin)/(xMax-xMin||1)*(canvas.width-2*pad)}
+  function ty(y){return canvas.height-pad-(y-yMin)/(yMax-yMin||1)*(canvas.height-2*pad)}
+  pts.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(tx(p.x),ty(p.y),3,0,Math.PI*2);
+    ctx.fillStyle=p.color||'#1a7f7a';
+    ctx.globalAlpha=.75;
+    ctx.fill();
+  });
+  ctx.globalAlpha=1;
+  ctx.fillStyle='#aaa';ctx.font='10px JetBrains Mono';
+  ctx.fillText('PC1',canvas.width-28,canvas.height-5);
+  ctx.fillText('PC2',5,14);
+}
+
+function updateProximityFilter(v){
+  document.getElementById('prox-val').textContent='k='+v;
+  applyProximityFilter();
+}
+
+// ─── RETRIEVAL ────────────────────────────────────────────
+async function doRetrieval(){
+  const query=document.getElementById('retrieval-query').value.trim();
+  const k=parseInt(document.getElementById('retrieval-k').value)||5;
+  const method=document.getElementById('retrieval-method').value;
+  if(!query){toast('Enter a search query',false);return;}
+  log('log-vec',`Searching: "${query}" k=${k} method=${method||'auto'}`);
+  try{
+    const r=await fetch(API+'/vectorial/search',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({query,k,method:method||null})
+    });
+    const d=await r.json();
+    let html='';
+    d.results.forEach(res=>{
+      html+=`<div class="result-item">
+        <span class="result-score">${res.similarity_score}</span>
+        <strong>Doc ${res.rank}</strong> <span class="tag">${res.method}</span>
+        <div class="result-text">${res.content.substring(0,120)}…</div>
+      </div>`;
+    });
+    document.getElementById('retrieval-results').innerHTML=html||'<span style="color:var(--muted);font-size:.72rem">No results</span>';
+    if(d.retrieved_summary){
+      document.getElementById('retrieved-summary').textContent=d.retrieved_summary;
+      document.getElementById('retrieved-summary').style.display='block';
+    }
+    toast('Retrieved '+d.results.length+' results via '+d.selected_method);
+    log('log-vec',`Retrieved ${d.results.length} docs. Method: ${d.selected_method}`,'ok');
+  }catch(e){
+    toast('Retrieval failed',false);
+    log('log-vec','Retrieval error: '+e.message,'err');
+  }
+}
+
+// ─── BUILD GRAPH ──────────────────────────────────────────
+async function doBuildGraph(){
+  setBtn('btn-graph',true);
+  log('log-graph','Building knowledge graph in Neo4j Aura…');
+  try{
+    const r=await fetch(API+'/graph/build',{method:'POST'});
+    const d=await r.json();
+    document.getElementById('graph-nodes').textContent=d.total_nodes_in_neo4j;
+    document.getElementById('graph-rels').textContent=d.total_rels_in_neo4j;
+    document.getElementById('graph-triplets').textContent=d.triplets_pushed;
+    document.getElementById('graph-stats').style.display='block';
+    toast('Graph built! '+d.total_nodes_in_neo4j+' nodes, '+d.total_rels_in_neo4j+' rels');
+    log('log-graph',`Graph built: ${d.total_nodes_in_neo4j} nodes, ${d.total_rels_in_neo4j} rels`,'ok');
+    fetchGraphData();
+  }catch(e){
+    toast('Graph build failed',false);
+    log('log-graph','Error: '+e.message,'err');
+  }
+  setBtn('btn-graph',false);
+  document.getElementById('btn-graph').innerHTML='🏗️ Build Knowledge Graph';
+}
+
+async function fetchGraphData(){
+  try{
+    const r=await fetch(API+'/graph/aura');
+    const d=await r.json();
+    document.getElementById('graph-nodes').textContent=d.total_nodes;
+    document.getElementById('graph-rels').textContent=d.total_relationships;
+    // Force la redraw
+    graphNodes = d.nodes_sample || [];
+    graphEdges = d.relationships_sample || [];
+    renderGraph();
+    log('log-graph',`Graph fetched: ${d.total_nodes} nodes, ${d.total_relationships} rels`,'ok');
+  }catch(e){
+    log('log-graph','Graph fetch error: '+e.message,'err');
+  }
+}
+
+let graphZoom=1;
+let graphNodes=[], graphEdges=[];
+function drawGraph(nodes, edges){
+  graphNodes=nodes||[]; graphEdges=edges||[];
+  renderGraph();
+}
+function zoomGraph(v){graphZoom=parseFloat(v);renderGraph();}
+function renderGraph(){
+  const canvas=document.getElementById('graph-canvas');
+  const ctx=canvas.getContext('2d');
+  canvas.width=canvas.offsetWidth||320;
+  canvas.height=180;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  if(!graphNodes.length){
+    ctx.fillStyle='#aaa';ctx.font='12px Sora';
+    ctx.fillText('No graph data — build graph first',20,90);
+    return;
+  }
+  const cx=canvas.width/2, cy=canvas.height/2;
+  const n=Math.min(graphNodes.length,60);
+  const pos={};
+  graphNodes.slice(0,n).forEach((node,i)=>{
+    const angle=(i/n)*2*Math.PI;
+    const r=Math.min(cx,cy)*0.75*graphZoom;
+    pos[node.name]={x:cx+r*Math.cos(angle),y:cy+r*Math.sin(angle)};
+  });
+  ctx.globalAlpha=.3;
+  ctx.strokeStyle='#1a7f7a';ctx.lineWidth=1;
+  graphEdges.slice(0,80).forEach(e=>{
+    const a=pos[e.source],b=pos[e.target];
+    if(a&&b){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+  });
+  ctx.globalAlpha=1;
+  graphNodes.slice(0,n).forEach(node=>{
+    const p=pos[node.name];
+    if(!p)return;
+    ctx.beginPath();ctx.arc(p.x,p.y,5,0,Math.PI*2);
+    ctx.fillStyle=node.color||'#1e3a5f';
+    ctx.fill();
+    ctx.fillStyle='#d4af37';ctx.font='8px JetBrains Mono';
+    ctx.fillText(node.name.substring(0,10),p.x+6,p.y+3);
+  });
+}
+
+// ─── COMMUNITIES ─────────────────────────────────────────
+async function fetchCommunities(){
+  log('log-graph','Detecting Louvain communities…');
+  try{
+    const r=await fetch(API+'/graph/communities');
+    const d=await r.json();
+    document.getElementById('modularity-val').textContent=d.modularity_score;
+    document.getElementById('clusters-val').textContent=d.num_communities;
+    const colors=['#1e3a5f','#1a7f7a','#d4af37','#e76f51','#6b8e6b','#9b59b6','#3498db','#e74c3c','#2ecc71','#f39c12','#1abc9c','#e67e22'];
+    let html='';
+    let ci=0;
+    for(const[name,comm] of Object.entries(d.communities).slice(0,15)){
+      html+=`
+        <div class="comm-card" onclick="showCommunityDetails('${name}', ${JSON.stringify(comm.members).replace(/"/g, '&quot;')})" style="cursor:pointer;">
+          <div class="comm-dot" style="background:${colors[ci%colors.length]}"></div>
+          <div style="flex:1">
+            <strong style="font-size:.7rem">${name}</strong>
+            <div style="color:var(--muted);font-size:.65rem">${Array.isArray(comm.members)?comm.members.slice(0,3).join(', '):''}${comm.members && comm.members.length>3 ? '...' : ''}</div>
+          </div>
+          <span class="tag" style="margin-left:auto">${comm.size || (comm.members ? comm.members.length : 0)}</span>
+        </div>
+      `;
+      ci++;
+    }
+    document.getElementById('community-list').innerHTML=html;
+    drawLouvain(d.num_communities, colors);
+    toast('Communities detected: '+d.num_communities);
+    log('log-graph',`${d.num_communities} communities detected, modularity=${d.modularity_score}`,'ok');
+  }catch(e){
+    log('log-graph','Community error: '+e.message,'err');
+  }
+}
+
+function showCommunityDetails(communityName, members){
+  const modal = document.getElementById('community-modal');
+  const title = document.getElementById('modal-title');
+  const membersDiv = document.getElementById('modal-members');
+  
+  title.textContent = `🏘️ Community: ${communityName}`;
+  
+  let membersHtml = `<strong>Members (${Array.isArray(members)?members.length:0}):</strong><br><br>`;
+  if(Array.isArray(members)){
+    membersHtml += members.map(m => `• ${m}`).join('<br>');
+  } else {
+    membersHtml += `• ${members}`;
+  }
+  membersDiv.innerHTML = membersHtml;
+  
+  modal.style.display = 'flex';
+}
+
+function drawLouvain(n, colors){
+  const canvas=document.getElementById('louvain-canvas');
+  const ctx=canvas.getContext('2d');
+  canvas.width=canvas.offsetWidth||320;
+  canvas.height=140;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const clusters=Math.min(n,8);
+  for(let c=0;c<clusters;c++){
+    const cx=40+c*(canvas.width-80)/Math.max(clusters-1,1);
+    const cy=70;
+    const count=5+Math.floor(Math.random()*10);
+    for(let i=0;i<count;i++){
+      const angle=Math.random()*2*Math.PI;
+      const r=10+Math.random()*25;
+      ctx.beginPath();
+      ctx.arc(cx+r*Math.cos(angle),cy+r*Math.sin(angle),3+Math.random()*4,0,Math.PI*2);
+      ctx.fillStyle=colors[c%colors.length];
+      ctx.globalAlpha=.75;
+      ctx.fill();
+    }
+  }
+  ctx.globalAlpha=1;
+}
+
+// ─── ADVANCED ─────────────────────────────────────────────
+async function fetchAdvanced(){
+  log('log-graph','Running advanced graph analysis…');
+  try{
+    const r=await fetch(API+'/graph/advanced');
+    const d=await r.json();
+    let barsHtml='';
+    for(const[name,val] of Object.entries(d.centrality.degree).slice(0,5)){
+      barsHtml+=`<div class="cent-row">
+        <span class="cent-label">${name.substring(0,14)}</span>
+        <div class="cent-bar-wrap"><div class="cent-bar" style="width:${val*100}%"></div></div>
+        <span class="cent-val">${val}</span>
+      </div>`;
+    }
+    document.getElementById('centrality-bars').innerHTML=barsHtml;
+    let pathHtml=d.semantic_paths.map(p=>`<div style="margin-bottom:3px">→ ${p}</div>`).join('');
+    document.getElementById('semantic-paths').innerHTML=pathHtml;
+    const fus=d.graph_vector_merging;
+    document.getElementById('fusion-info').innerHTML=`
+      <span class="tag blue">Vector: ${fus.weight?.vector||.6}</span>
+      <span class="tag" style="background:#fdf3e7;color:var(--coral)">Graph: ${fus.weight?.graph||.4}</span>
+      <span class="tag green">${fus.llm}</span>
+    `;
+    toast('Advanced analysis done');
+    log('log-graph','Advanced metrics computed','ok');
+  }catch(e){
+    log('log-graph','Advanced analysis error: '+e.message,'err');
+  }
+}
+
+// ─── POLICY ───────────────────────────────────────────────
+let rewardHistory=[];
+async function fetchPolicy(){
+  try{
+    const r=await fetch(API+'/agent/policy');
+    const d=await r.json();
+    rewardHistory=d.reward_history||[];
+    document.getElementById('reward-iter').textContent=d.total_iterations;
+    document.getElementById('feedback-iter').textContent=d.total_iterations;
+    if(rewardHistory.length){
+      const last=rewardHistory[rewardHistory.length-1];
+      document.getElementById('last-reward').textContent=last.reward;
+      document.getElementById('feedback-reward').textContent=last.reward;
+    }
+    drawReward(rewardHistory);
+    if(d.policy&&Object.keys(d.policy).length){
+      let rows='';
+      for(const[state,info] of Object.entries(d.policy)){
+        rows+=`<tr>
+          <td>${state}</td>
+          <td><span class="tag ${info.best_action==='graph'?'orange':'blue'}">${info.best_action}</span></td>
+          <td>${info.q_values?.graph||0}</td>
+          <td>${info.q_values?.vectorial||0}</td>
+        </tr>`;
+      }
+      document.getElementById('policy-tbody').innerHTML=rows;
+      document.getElementById('policy-table-wrap').style.display='block';
+    }
+  }catch(e){}
+}
+
+function drawReward(history){
+  const canvas=document.getElementById('reward-canvas');
+  const ctx=canvas.getContext('2d');
+  canvas.width=canvas.offsetWidth||280;
+  canvas.height=90;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  if(!history||!history.length){
+    ctx.fillStyle='#aaa';ctx.font='11px Sora';
+    ctx.fillText('No reward history yet',30,45);
+    return;
+  }
+  const vals=history.map(h=>h.reward);
+  const maxV=Math.max(...vals,1),minV=Math.min(...vals,0);
+  const w=canvas.width,h=canvas.height,pad=10;
+  ctx.strokeStyle='var(--teal)';ctx.lineWidth=2;
+  ctx.beginPath();
+  vals.forEach((v,i)=>{
+    const x=pad+i*(w-2*pad)/Math.max(vals.length-1,1);
+    const y=h-pad-(v-minV)/(maxV-minV||1)*(h-2*pad);
+    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+  });
+  ctx.stroke();
+  ctx.lineTo(w-pad,h-pad);ctx.lineTo(pad,h-pad);ctx.closePath();
+  ctx.fillStyle='rgba(26,127,122,.15)';ctx.fill();
+  ctx.fillStyle='#aaa';ctx.font='9px JetBrains Mono';
+  ctx.fillText('0',2,h-pad);ctx.fillText(`${maxV.toFixed(2)}`,2,pad+8);
+  ctx.fillText('Iterations →',w-70,h-2);
+}
+
+// ─── QUERY ────────────────────────────────────────────────
+async function doQuery(){
+  const question=document.getElementById('query-input').value.trim();
+  if(!question){toast('Please enter a question',false);return;}
+  setBtn('btn-send',true);
+  log('log-query',`Executing query: "${question.substring(0,50)}…"`);
+  log('log-agent','Q-Learning agent processing query…');
+  try{
+    const ar=await fetch(API+'/query/analyze',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({question})
+    });
+    const ad=await ar.json();
+    const type=ad.automatic_analysis?.detected_type||'—';
+    document.getElementById('q-type').textContent=type;
+    const routing=ad.routing_decision?.selected_branch||'—';
+    document.getElementById('q-routing').innerHTML=`<span class="tag ${routing.includes('Graph')?'orange':'blue'}">${routing}</span>`;
+    const conf=ad.routing_decision?.confidence||'—';
+    document.getElementById('q-conf').textContent=conf;
+    const confNum=parseInt(conf)||50;
+    document.getElementById('conf-bar').style.width=confNum+'%';
+    const isGraph=routing.includes('Graph');
+    document.getElementById('route-graph').className='route-box '+(isGraph?'selected-graph':'');
+    document.getElementById('route-vec').className='route-box '+(!isGraph?'selected-vec':'');
+    document.getElementById('path-type').textContent=type;
+    document.getElementById('path-complexity').textContent=ad.automatic_analysis?.features?.complexity||'—';
+    const er=await fetch(API+'/query/execute',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({question})
+    });
+    const ed=await er.json();
+    const ans=ed.step5_final_answer;
+    document.getElementById('final-answer').textContent=ans?.content||'—';
+    document.getElementById('ans-provenance').textContent=ans?.provenance||'—';
+    document.getElementById('ans-confidence').textContent=ans?.confidence_score||'—';
+    document.getElementById('policy-path').textContent=ed.policy_path||'—';
+    const reward=ed.step4_reward_update;
+    document.getElementById('feedback-reward').textContent=reward?.reward_obtained||'—';
+    document.getElementById('feedback-reinjected').textContent=reward?.hybrid_feedback_loop?.graph_result_reinjected?'✅ Yes':'No';
+    document.getElementById('last-reward').textContent=reward?.reward_obtained||'—';
+    const exec=ed.step3_execution?.graph_query_execution;
+    if(exec){
+      document.getElementById('cypher-executed').innerHTML=
+        `<span class="cypher-key">MATCH</span> (A)–[R]→(B)<br/>${exec.cypher_executed||''}`;
+      const subs=exec.explored_subgraphs||[];
+      document.getElementById('subgraph-list').innerHTML=subs.slice(0,8).map(s=>
+        `<span class="tag" style="margin:1px;display:inline-block">${s}</span>`).join('');
+      document.getElementById('neo4j-results').style.display='block';
+    }
+    const branch=ed.step3_execution?.branch;
+    const pathFlow=document.getElementById('decision-path');
+    pathFlow.innerHTML=`
+      <div class="path-node query">User Query</div>
+      <span class="path-arrow">→</span>
+      <div class="path-node">${type} Analysis</div>
+      <span class="path-arrow">→</span>
+      <div class="path-node ${branch==='graph'?'graph':'vector'}">${branch==='graph'?'Graph RAG':'Vectorial RAG'}</div>
+    `;
+    addToHistory(question);
+    if(reward?.reward_monitor) {
+      rewardHistory=reward.reward_monitor;
+      drawReward(rewardHistory);
+    }
+    document.getElementById('reward-iter').textContent=
+      ed.step2_q_learning_decision?.policy_visualization?.total_iterations||0;
+    const policy=ed.step2_q_learning_decision?.policy_visualization;
+    if(policy&&policy.policy){
+      let rows='';
+      for(const[state,info] of Object.entries(policy.policy)){
+        rows+=`<tr>
+          <td>${state}</td>
+          <td><span class="tag ${info.best_action==='graph'?'orange':'blue'}">${info.best_action}</span></td>
+          <td>${info.q_values?.graph||0}</td>
+          <td>${info.q_values?.vectorial||0}</td>
+        </tr>`;
+      }
+      document.getElementById('policy-tbody').innerHTML=rows;
+      document.getElementById('policy-table-wrap').style.display='block';
+    }
+    toast('Query executed! Confidence: '+conf);
+    log('log-query',`Done. Routing: ${routing}. Reward: ${reward?.reward_obtained||'—'}`,'ok');
+    log('log-agent',`Q-Learning updated. Action: ${branch}. Reward: ${reward?.reward_obtained||'—'}`,'ok');
+  }catch(e){
+    toast('Query failed: '+e.message,false);
+    log('log-query','Error: '+e.message,'err');
+    log('log-agent','Error: '+e.message,'err');
+  }
+  setBtn('btn-send',false);
+  document.getElementById('btn-send').innerHTML='✉️ Envoyer / Exécuter';
+}
+
+function addToHistory(q){
+  const hist=document.getElementById('query-history');
+  const div=document.createElement('div');
+  div.className='history-item';
+  div.onclick=function(){useHistory(this)};
+  div.textContent=q.substring(0,50)+(q.length>50?'…':'');
+  hist.insertBefore(div,hist.firstChild);
+  if(hist.children.length>8) hist.removeChild(hist.lastChild);
+}
+function useHistory(el){
+  document.getElementById('query-input').value=el.textContent.replace('…','');
+}
+
+// ─── RESET ────────────────────────────────────────────────
+async function doReset(){
+  document.getElementById('query-input').value='';
+  document.getElementById('q-type').textContent='—';
+  document.getElementById('q-routing').textContent='—';
+  document.getElementById('q-conf').textContent='—';
+  document.getElementById('conf-bar').style.width='0%';
+  document.getElementById('final-answer').innerHTML='<span style="color:var(--muted);font-size:.72rem">Submit a query to generate an answer…</span>';
+  document.getElementById('route-graph').className='route-box';
+  document.getElementById('route-vec').className='route-box';
+  document.getElementById('policy-path').textContent='Waiting for query…';
+  try{await fetch(API+'/query/reset',{method:'POST'});}catch(e){}
+  toast('System reset');
+  log('log-query','System reset','info');
+}
+
+// ─── SHOW SECTION (FIXED — columns stay in their grid position) ──
+function showSection(s, btn){
+  // Update active tab
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+
+  const cols = document.querySelectorAll('#main-grid .col-card');
+
+  if(s === 'all'){
+    // Show all columns in place
+    cols.forEach(c => {
+      c.style.visibility = 'visible';
+      c.style.opacity    = '1';
+      c.style.pointerEvents = 'auto';
+    });
+    return;
+  }
+
+  const map = { vectorial: 0, graph: 1, agentic: 2, query: 3 };
+  const targetIndex = map[s];
+
+  cols.forEach((c, i) => {
+    if(i === targetIndex){
+      // Keep visible in its original grid position
+      c.style.visibility    = 'visible';
+      c.style.opacity       = '1';
+      c.style.pointerEvents = 'auto';
+    } else {
+      // Hide but still occupy the grid space — does NOT move!
+      c.style.visibility    = 'hidden';
+      c.style.opacity       = '0';
+      c.style.pointerEvents = 'none';
+    }
+  });
+}
+
+// ─── AUTO INIT ────────────────────────────────────────────
+window.addEventListener('resize',()=>{
+  if(pcaData) drawPCA(pcaData);
+  drawReward(rewardHistory);
+});
+drawPCA(null);
+async function applyProximityFilter(){
+  const k = document.getElementById('prox-slider').value;
+  const query = document.getElementById('retrieval-query').value;
+  if(!query){
+    toast('Enter a query first in Retrieval section', false);
+    return;
+  }
+  try{
+    const r = await fetch(API+'/embeddings/filter',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({query: query, k: parseInt(k)})
+    });
+    const data = await r.json();
+    highlightFilteredPoints(data.filtered_points);
+    toast(`Filtered ${data.num_results} points closest to "${query}"`);
+  }catch(e){
+    toast('Filter error: '+e.message, false);
+  }
+}
+
+function highlightFilteredPoints(filteredPoints){
+  if(!pcaData || !filteredPoints || !filteredPoints.length) return;
+  const canvas = document.getElementById('pca-canvas');
+  const ctx = canvas.getContext('2d');
+  drawPCA(pcaData);
+  const pts = pcaData.points;
+  const xs = pts.map(p=>p.x), ys = pts.map(p=>p.y);
+  const xMin = Math.min(...xs), xMax = Math.max(...xs);
+  const yMin = Math.min(...ys), yMax = Math.max(...ys);
+  const pad = 20;
+  const width = canvas.width, height = canvas.height;
+  function tx(x){return pad+(x-xMin)/(xMax-xMin||1)*(width-2*pad)}
+  function ty(y){return height-pad-(y-yMin)/(yMax-yMin||1)*(height-2*pad)}
+  filteredPoints.forEach(fp => {
+    const point = pts[fp.chunk_index];
+    if(!point) return;
+    ctx.beginPath();
+    ctx.arc(tx(point.x), ty(point.y), 6, 0, Math.PI*2);
+    ctx.fillStyle = '#ff4444';
+    ctx.shadowBlur = 8;
+    ctx.fill();
+  });
+  ctx.shadowBlur = 0;
+}
+drawReward([]);
+</script>
+<div id="community-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; justify-content:center; align-items:center;">
+  <div style="background:white; border-radius:12px; padding:20px; max-width:500px; max-height:80%; overflow:auto;">
+    <h3 id="modal-title" style="color:#1e3a5f; margin-bottom:10px;">Community</h3>
+    <div id="modal-members" style="font-size:12px; line-height:1.6;"></div>
+    <button onclick="document.getElementById('community-modal').style.display='none'" style="margin-top:15px; padding:8px 16px; background:#1e3a5f; color:white; border:none; border-radius:6px; cursor:pointer;">Close</button>
+  </div>
+</div>
+</body>
+</html>
