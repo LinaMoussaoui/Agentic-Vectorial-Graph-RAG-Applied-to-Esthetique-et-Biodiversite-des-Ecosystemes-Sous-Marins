@@ -221,8 +221,8 @@ PFA RAG/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/JouichatKhadija/Agentic-Vectorial-Graph-RAG-Applied-to-Esthetique-et-Biodiversite-des-Ecosystemes-Sous-Marins-.git
-cd "PFA RAG"
+git clone https://github.com/LinaMoussaoui/Agentic-Vectorial-Graph-RAG-Applied-to-Esthetique-et-Biodiversite-des-Ecosystemes-Sous-Marins.git
+cd Agentic-Vectorial-Graph-RAG-Applied-to-Esthetique-et-Biodiversite-des-Ecosystemes-Sous-Marins
 ```
 
 ### 2. Set Up the Backend
@@ -343,12 +343,6 @@ Contributions make the open-source community an amazing place to learn, inspire,
 5. Open a Pull Request.
 
 ---
-
-## 👥 Project Credits
-
-* **Dr. EL MKHALET Mouna** - Technical Supervisor & Project Coordinator
-* **Lina MOUSSAOUI** - Project Partner & Deep Learning Lead
-* **Khadija JOUICHAT** - Project Partner & RAG & Graph DB Lead
 
 ### 📖 References & Source Material
 This project is built directly upon the 2017 doctoral dissertation:
